@@ -37,23 +37,27 @@ SITE_ID = int(os.environ.get("SITE_ID", 1))
 
 # If you set this to False, Django will make some optimizations so as not
 # to load the internationalization machinery.
-USE_I18N = True
+USE_I18N = False
 
 # If you set this to False, Django will not format dates, numbers and
 # calendars according to the current locale.
-USE_L10N = True
+USE_L10N = False
 
 # If you set this to False, Django will not use timezone-aware datetimes.
 USE_TZ = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
-MEDIA_ROOT = os.path.join(PACKAGE_ROOT, "site_media", "media")
+MEDIA_ROOT = os.path.join(PACKAGE_ROOT, "site_media", "uploads")
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
 # Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
-MEDIA_URL = "/site_media/media/"
+MEDIA_URL = "/site_media/uploads/"
+
+FILEBROWSER_MEDIA_ROOT = MEDIA_ROOT+'/'
+FILEBROWSER_MEDIA_URL = MEDIA_URL
+FILEBROWSER_DIRECTORY = ''
 
 # Absolute path to the directory static files should be collected to.
 # Don"t put anything in this directory yourself; store your static files
@@ -119,7 +123,9 @@ TEMPLATE_DIRS = [
 ]
 
 INSTALLED_APPS = [
+    'grappelli.dashboard',
     'grappelli',
+    'filebrowser',
     'django.contrib.admin',
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -195,3 +201,8 @@ AUTHENTICATION_BACKENDS = [
 ]
 
 AUTH_PROFILE_MODULE = 'mysite.UserProfile'
+
+# Grappelli
+
+GRAPPELLI_ADMIN_TITLE = 'The Harvard Lampoon'
+GRAPPELLI_INDEX_DASHBOARD = 'mysite.dashboard.MainDashboard'

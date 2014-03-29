@@ -3,6 +3,6 @@ from contracts.models import *
 
 # Register your models here.
 
-admin.site.register(Advertiser)
-admin.site.register(Issue)
-admin.site.register(Advert)
+admin.site.register(Advertiser, AdvertiserAdmin)
+admin.site.register(Issue, IssueAdmin)
+admin.site.register(Advert, AdvertAdmin)

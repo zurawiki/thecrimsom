@@ -10,7 +10,7 @@ downloads
 eggs
 log
 parts
-mysite/site_media/media/uploads/
+mysite/site_media/uploads/
 tmp
 .DS_Store
 *.db
