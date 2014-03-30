@@ -26,6 +26,7 @@ class Advertiser(models.Model):
             return "%s %s, %s, %s %s" % (self.address_1, self.address_2, self.city, self.state, self.zip_code)
         else:
             return "%s, %s, %s %s" % (self.address_1, self.city, self.state, self.zip_code)
+
     address.short_description = _("Mailing Address")
 
 
@@ -42,16 +43,19 @@ class Issue(models.Model):
     def __str__(self):
         return '%d, %d: %s' % (self.volume, self.issueNumber, self.title)
 
+    class Meta:
+        ordering = ['-volume', '-issueNumber']
+
 
 class IssueAdmin(admin.ModelAdmin):
     list_display = ('title', 'volume', 'issueNumber')
     list_filter = ('volume',)
     fieldsets = [('', {
-        'fields': ('volume','issueNumber'),
+        'fields': ('volume', 'issueNumber'),
     }),
-    ('', {
-        'fields': ('title',),
-    })]
+                 ('', {
+                     'fields': ('title',),
+                 })]
 
 
 class Advert(models.Model):
@@ -82,6 +86,9 @@ class Advert(models.Model):
         return self.issues.count()
 
     issues_count.short_description = _("Issues ordered")
+
+    class Meta:
+        ordering = ['-created_at']
 
 
 class AdvertAdmin(admin.ModelAdmin):

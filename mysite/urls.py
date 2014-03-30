@@ -8,12 +8,12 @@ from filebrowser.sites import site
 
 
 urlpatterns = patterns("",
-	url(r"^$", TemplateView.as_view(template_name="homepage.html"), name="home"),
-    url(r"^contracts/", include('contracts.urls')),
-    (r'^admin/filebrowser/', include(site.urls)),
-    (r'^grappelli/', include('grappelli.urls')),  # grappelli URLS
-    (r'^admin/',  include(admin.site.urls)),  # admin site
-    url(r"^accounts/", include("account.urls")),
+                       url(r"^$", TemplateView.as_view(template_name="homepage.html"), name="home"),
+                       url(r"^contracts/", include('contracts.urls')),
+                       (r'^admin/filebrowser/', include(site.urls)),
+                       (r'^grappelli/', include('grappelli.urls')),  # grappelli URLS
+                       (r'^admin/', include(admin.site.urls)),  # admin site
+                       url(r"^accounts/", include("account.urls")),
 )
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

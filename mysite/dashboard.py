@@ -20,40 +20,26 @@ class MainDashboard(Dashboard):
     def init_with_context(self, context):
         site_name = get_admin_site_name(context)
 
-        # append a group for "Contracts"
         self.children.append(modules.AppList(
             _('Advertising Contracts'),
             column=1,
-            collapsible=False,
             models=('contracts.*',),
         )
         )
 
-        # append a group for "Administration" & "Applications"
-        self.children.append(modules.Group(
-            _('Advanced Settings'),
-            column=2,
-            collapsible=True,
-            children=[
-                modules.AppList(
-                    _('Accounts'),
-                    column=1,
-                    css_classes=('collapse closed',),
-                    models=('account.*', 'django.contrib.auth.*', 'mysite.*'),
-                ),
-                modules.AppList(
-                    _('Administration'),
-                    column=1,
-                    collapsible=False,
-                    exclude=('account.*', 'django.contrib.auth.*', 'mysite.*', 'contracts.*'),
-                ),
-            ]
-        ))
+        self.children.append(modules.AppList(
+            _('User Accounts'),
+            column=1,
+            collapsible=False,
+            models=('account.*', 'django.contrib.auth.*', 'mysite.*'),
+        )
+        )
 
         # append another link list module for "support".
         self.children.append(modules.LinkList(
             _('Media Management'),
-            column=3,
+            column=2,
+            collapsible=False,
             children=[
                 {
                     'title': _('File Browser'),
@@ -62,6 +48,14 @@ class MainDashboard(Dashboard):
                 },
             ]
         ))
+
+        self.children.append(modules.AppList(
+            _('Server Administration'),
+            column=2,
+            collapsible=False,
+            exclude=('account.*', 'django.contrib.auth.*', 'mysite.*', 'contracts.*'),
+        ))
+
 
 
         # append a recent actions module

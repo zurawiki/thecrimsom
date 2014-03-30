@@ -2,7 +2,6 @@
 
 {% load staticfiles %}
 {% load metron_tags %}
-{% load i18n %}
 
 
 {% block style_base %}
@@ -16,6 +15,11 @@
     {% block extra_head %}{% endblock %}
 {% endblock %}
 
+{% block nav %}
+    <ul class="nav navbar-nav">
+        <li><a href="/contracts/">Contracts</a></li>
+    </ul>
+{% endblock %}
 
 {% block footer %}
     {% include "_footer.html" %}

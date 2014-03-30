@@ -1,6 +1,4 @@
-{% extends "homepage.html" %}
-
-{% load i18n %}
+{% extends "site_base.html" %}
 
 {% block head_title %}{{ ad.description }}{% endblock %}
 
@@ -30,10 +28,10 @@
     {% endif %}
 
 
-    <a href="update">Edit</a>
+    <a class="btn btn-primary" href="update">Edit</a>
     {% if ad.disabled %}
-        <a href="enable">Enable</a>
+        <a class="btn btn-success" href="enable">Enable</a>
     {%  else %}
-        <a href="disable">Disable</a>
+        <a class="btn btn-danger" href="disable">Disable</a>
     {%  endif %}
 {% endblock %}

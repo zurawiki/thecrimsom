@@ -1,18 +1,186 @@
 [
     {
-        "pk": 1, 
-        "model": "sites.site", 
+        "pk": 1,
+        "model": "sites.site",
         "fields": {
-            "domain": "localhost:8000", 
-            "name": "localhost"
+            "domain": "localhost:8000",
+            "name": "The Harvard Lampoon"
         }
     },
     {
-        "pk": 2, 
-        "model": "sites.site", 
+        "pk": 1,
+        "model": "contracts.advertiser",
         "fields": {
-            "domain": "example.com", 
-            "name": "example.com"
+            "city": "Smalltown",
+            "name": "Contoso Marketing",
+            "telephone": "5555551212",
+            "state": "MI",
+            "contact": "John Appleseed",
+            "address_1": "123 Test St",
+            "address_2": "",
+            "position": "Sales",
+            "email": "john@contoso.com",
+            "zip_code": "01234"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "contracts.advertiser",
+        "fields": {
+            "city": "Frost",
+            "name": "Blue Industries",
+            "telephone": "5551234567",
+            "state": "MA",
+            "contact": "Joeseph Contoso",
+            "address_1": "34 Cool Ave",
+            "address_2": "",
+            "position": "Marketing",
+            "email": "jcontoso@gmail.com",
+            "zip_code": "98767"
+        }
+    },
+    {
+        "pk": 1,
+        "model": "contracts.issue",
+        "fields": {
+            "volume": 2014,
+            "issueNumber": 1,
+            "title": "Let It Ride"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "contracts.issue",
+        "fields": {
+            "volume": 2013,
+            "issueNumber": 2,
+            "title": "Big & Nasty"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "contracts.issue",
+        "fields": {
+            "volume": 2013,
+            "issueNumber": 1,
+            "title": "The Classic"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "contracts.issue",
+        "fields": {
+            "volume": 2012,
+            "issueNumber": 1,
+            "title": "The 90s"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "contracts.issue",
+        "fields": {
+            "volume": 2011,
+            "issueNumber": 1,
+            "title": "99c"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "contracts.issue",
+        "fields": {
+            "volume": 2009,
+            "issueNumber": 1,
+            "title": "This Time Tomorrow"
+        }
+    },
+    {
+        "pk": 1,
+        "model": "auth.user",
+        "fields": {
+            "username": "roger",
+            "first_name": "Roger",
+            "last_name": "Zurawicki",
+            "is_active": true,
+            "is_superuser": true,
+            "is_staff": true,
+            "last_login": "2014-03-29T22:51:06Z",
+            "groups": [],
+            "user_permissions": [],
+            "password": "pbkdf2_sha256$12000$jv2nDv7x0aqs$yf3A2\/qWFz83dd28XAYA6yOP7fqmbzg9qhoaxfVm\/dY=",
+            "email": "rzurawicki@gmail.com",
+            "date_joined": "2014-03-29T22:50:31Z"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "auth.user",
+        "fields": {
+            "username": "demo",
+            "first_name": "",
+            "last_name": "",
+            "is_active": true,
+            "is_superuser": false,
+            "is_staff": false,
+            "last_login": "2014-03-30T00:20:07.803Z",
+            "groups": [],
+            "user_permissions": [],
+            "password": "pbkdf2_sha256$12000$fH4FnZklPy2D$kxl\/ak0g\/LldsduwjU5EzMgAd58Waz0aYBCUGKcHYWE=",
+            "email": "demo@example.com",
+            "date_joined": "2014-03-30T00:19:23.385Z"
+        }
+    },
+    {
+        "pk": 1,
+        "model": "mysite.userprofile",
+        "fields": {
+            "advertiser": null,
+            "user": 1
+        }
+    },
+    {
+        "pk": 2,
+        "model": "mysite.userprofile",
+        "fields": {
+            "advertiser": null,
+            "user": 2
+        }
+    },
+    {
+        "pk": 1,
+        "model": "account.account",
+        "fields": {
+            "timezone": "",
+            "user": 1,
+            "language": "en-us"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "account.account",
+        "fields": {
+            "timezone": "",
+            "user": 2,
+            "language": "en-us"
+        }
+    },
+    {
+        "pk": 1,
+        "model": "account.emailaddress",
+        "fields": {
+            "verified": true,
+            "user": 1,
+            "primary": true,
+            "email": "rzurawicki@gmail.com"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "account.emailaddress",
+        "fields": {
+            "verified": true,
+            "user": 2,
+            "primary": true,
+            "email": "demo@example.com"
         }
     }
 ]
