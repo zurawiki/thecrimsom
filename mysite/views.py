@@ -16,28 +16,48 @@ def article_detail(request, year, month, day, page_slug):
 
 
 def section_news(request):
-    return None
+    data = {}
+    # fill it
+    return render_to_response('section/news.html', data)
 
 
 def section_opinion(request):
-    return None
+    data = {}
+    # fill it
+    return render_to_response('section/opinion.html', data)
 
 
 def section_magazine(request):
-    return None
+    data = {}
+    # fill it
+    return render_to_response('section/magazine.html', data)
 
 
 def section_sports(request):
-    return None
+    data = {}
+    # fill it
+    return render_to_response('section/sports.html', data)
 
 
 def section_media(request):
-    return None
+    data = {}
+    # fill it
+    return render_to_response('section/media.html', data)
 
 
 def section_flyby(request):
-    return None
+    data = {}
+    # fill it
+    return render_to_response('section/flyby.html', data)
 
 
 def section_admissions(request):
-    return None
+    data = {}
+    # fill it
+    return render_to_response('section/admissions.html', data)
+
+
+def section_arts(request):
+    data = {}
+    # fill it
+    return render_to_response('section/arts.html', data)

@@ -14,15 +14,13 @@ urlpatterns = patterns("",
                        url(r'^section/opinion/$', views.section_opinion),
                        url(r'^section/fm/$', views.section_magazine),
                        url(r'^section/sports/$', views.section_sports),
+                       url(r'^section/arts/$', views.section_arts),
                        url(r'^section/media/$', views.section_media),
                        url(r'^section/flyby/$', views.section_flyby),
                        url(r'^admissions/$', views.section_admissions),
-                       url(r'^article/(?P<year>\d{4})/(?P<month>\d{2})/(?P<day>\d{2})/(?P<page_slug>[\w-]+)/$',
+                       url(r'^article/(?P<year>\d+)/(?P<month>\d+)/(?P<day>\d+)/(?P<page_slug>[\w-]+)/$',
                            views.article_detail),
 
-
-                       url(r'^article/(?P<year>\d{4})/(?P<month>\d{2})/(?P<day>\d{2})/(?P<page_slug>[\w-]+)/$',
-                           views.article_detail),
 
 
                        (r'^admin/filebrowser/', include(site.urls)),
