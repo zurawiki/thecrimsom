@@ -32,3 +32,10 @@ class Article(models.Model):
                                      default=0, db_index=True)
     created_on = models.DateTimeField(auto_now_add=True, db_index=True)
     modified_on = models.DateTimeField(auto_now=True)
+
+
+class BreakingNews(models.Model):
+    description = models.TextField(blank=False, null=False, default='')
+    link = models.CharField(max_length=255, blank=False, null=False, default='#')
+    active = models.BooleanField()
+    when = models.DateTimeField()

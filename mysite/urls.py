@@ -1,7 +1,6 @@
 from django.conf import settings
 from django.conf.urls import patterns, include, url
 from django.conf.urls.static import static
-from django.views.generic import TemplateView
 from django.contrib import admin
 from filebrowser.sites import site
 
@@ -9,7 +8,7 @@ from mysite import views
 
 
 urlpatterns = patterns("",
-                       url(r"^$", TemplateView.as_view(template_name="homepage.html"), name="home"),
+                       url(r"^$", views.home),
                        url(r'^section/news/$', views.section_news),
                        url(r'^section/opinion/$', views.section_opinion),
                        url(r'^section/fm/$', views.section_magazine),

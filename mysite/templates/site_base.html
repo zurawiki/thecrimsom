@@ -1,40 +1,1296 @@
-{% extends "theme_base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Harvard News | The Harvard Crimson</title>
 
-{% load staticfiles %}
-{% load metron_tags %}
+    <!-- generated at April 6, 2014, 1:05 p.m. -->
 
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
 
-{% block style_base %}
-    <link href="{% static "pinax/css/theme.css" %}" rel="stylesheet">
-    <link href="{% static "css/site.css" %}" rel="stylesheet">
-    {% block extra_style %}{% endblock %}
-{% endblock %}
-
-
-{% block extra_head_base %}
-    {% block extra_head %}{% endblock %}
-{% endblock %}
-
-{% block nav %}
-    <ul class="nav navbar-nav">
-        <li><a href="/contracts/">Contracts</a></li>
-    </ul>
-{% endblock %}
-
-{% block footer %}
-    {% include "_footer.html" %}
-{% endblock %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-{% block extra_body_base %}
-    {% analytics %}
-    {% block extra_body %}{% endblock %}
-{% endblock %}
+    <meta property="og:image" content="http://static.thecrimson.com/images/seal.jpg">
 
 
-{% block script_base %}
-    <script src="{% block jquery_src %}{% static "pinax/js/jquery.js" %}{% endblock %}"></script>
-    <script src="{% static "js/bootstrap.min.js" %}"></script>
-    <script src="{% static "pinax/js/theme.js" %}"></script>
-    {% block extra_script %}{% endblock %}
-{% endblock %}
+    <link rel="stylesheet" href="http://static.thecrimson.com.s3.amazonaws.com/CACHE/css/c64094570797.css"
+          type="text/css"/>
+
+
+    <script type="text/javascript">
+        CURR_URI = "http://www.thecrimson.com/";
+    </script>
+
+    <script type="text/javascript"
+            src="http://static.thecrimson.com.s3.amazonaws.com/CACHE/js/f9dbcfbad10e.js"></script>
+
+
+    <script type="text/javascript">var NREUMQ = NREUMQ || [];
+    NREUMQ.push(["mark", "firstbyte", new Date().getTime()]);</script>
+</head>
+
+<body>
+<header>
+    <div id="masthead">
+        <div id="masthead-first-wrapper">
+            <div id="toolbar">
+                <div id="toolbar-container">
+                    <nav id="toolbar-colophon">
+                        <ul>
+                            <li><a href="/about/">About Us</a></li>
+                            <li><a href="http://www.thecrimsonadvertising.com/" target="_blank">Advertising</a></li>
+                            <li><a href="/subscribe/">Subscribe</a></li>
+                            <li><a href="http://programs.thecrimson.com/">Journalism Programs</a></li>
+                            <li><a href="/classifieds/" rel="nofollow">Classifieds</a></li>
+                            <li><a href="http://thecrimson.personforce.com/" target="_blank">Job Board</a></li>
+                        </ul>
+                    </nav>
+                    <nav id="toolbar-social">
+
+                    </nav>
+                    <div id="toolbar-weather">
+                        <a href="http://www.accuweather.com/en/us/cambridge-ma/02138/weather-forecast/756_pc"><span
+                                class="weather-locale">Cambridge, MA</span> Weather: 48&deg;F <img alt="sun"
+                                                                                                   src="http://static.thecrimson.com/images/icons/sun.svg"
+                                                                                                   width="16"
+                                                                                                   height="16"
+                                                                                                   style="vertical-align: bottom; margin-left: 2px;"/></a>
+                    </div>
+                    <div id="masthead-search-mobile">
+                        <form action="/search/" id="cse-search-box">
+                            <input type="hidden" name="cx" value="013815813102981840311:aw6l9tjs1a0"/>
+                            <input type="hidden" name="cof" value="FORID:10"/>
+                            <input type="hidden" name="ie" value="UTF-8"/>
+                            <input type="text" class="query" name="q"/>
+                            <button class="search-submit" type="submit" name="sa">Search</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div id="masthead-first">
+                <div id="masthead-first-container">
+                    <h1><a href="/">The Harvard Crimson</a></h1>
+
+                    <div id="masthead-search">
+                        <form action="/search/" id="cse-search-box">
+                            <input type="hidden" name="cx" value="013815813102981840311:aw6l9tjs1a0"/>
+                            <input type="hidden" name="cof" value="FORID:10"/>
+                            <input type="hidden" name="ie" value="UTF-8"/>
+                            <input type="text" class="query" name="q"/>
+                            <button class="search-submit" type="submit" name="sa">Search</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="masthead-second">
+            <nav id="masthead-nav-mobile">
+                <ul>
+                    <li><a href="#">Sections</a></li>
+                </ul>
+            </nav>
+            <nav id="masthead-nav" class="mobile-hidden">
+                {% block nav %}
+                    <ul>
+                        <li><a href="/section/news/">News</a></li>
+                        <li><a href="/section/opinion/">Opinion</a></li>
+                        <li><a href="/section/fm/">Magazine</a></li>
+                        <li><a href="/section/sports/">Sports</a></li>
+                        <li><a href="/section/arts/">Arts</a></li>
+                        <li><a href="/section/media/">Media</a></li>
+                        <li><a href="/section/flyby/">Flyby</a></li>
+                        <li><a href="/admissions/">Admissions</a></li>
+                    </ul>
+                {% endblock nav %}
+            </nav>
+        </div>
+    </div>
+</header>
+
+
+<div id="content">
+
+<div class="leaderboard">
+    <div id="ad-TheCrimson_Homepage_ATF_728x90" style="width: 728px; height: 90px;">
+        <script type='text/javascript'>
+            if (Crimson.Responsive.isMobile === (0 === 1)
+                    || (0 === 0)) {
+                googletag.cmd.push(function () {
+                    googletag.display('ad-TheCrimson_Homepage_ATF_728x90');
+                });
+            }
+        </script>
+    </div>
+</div>
+
+{% block body %}
+
+    <div id="breaking-news" style="display: block;">
+        <h3>Breaking News</h3>
+
+        <div id="breaking-news-first">
+            <a href="http://www.thecrimson.com/article/2014/4/6/pfoho-sophomore-fall/">Pfoho Resident Andrew Sun '16 in
+                Critical Condition after Fall from Building Early Sunday Morning</a>
+            Updated 5:19 p.m.
+        </div>
+        <div id="breaking-news-second">
+            <a id="breaking-news-dismiss" data-timestamp="171959000000" href="#" title="Dismiss">×</a>
+        </div>
+    </div>
+
+    <section id="primary">
+    <div id="primary-first">
+
+
+        <div class="article feature vertical">
+
+            <div class="article-image">
+                <a href="/article/2014/4/5/divinity-school-campaign-launch/">
+                    <img src="http://thumbnails.thecrimson.com.s3.amazonaws.com/photos/2014/01/28/195249_1293108.jpg.550x356_q95_crop-smart_upscale.jpg"
+                         title="Harvard Divinity School" alt="Harvard Divinity School"/>
+                </a>
+            </div>
+
+
+            <div class="article-content">
+
+                <h2><a href='/article/2014/4/5/divinity-school-campaign-launch/'>Divinity School Launches Capital
+                    Campaign,
+                    Aims to Raise $50 Million</a></h2>
+
+
+                <div class="article-byline">
+                    By <a href='/writer/1210552/Theodore_R._Delwiche/'>Theodore R. Delwiche</a>
+                    <time
+                            class="article-date"
+                            datetime="2014-04-05"
+                            title="Updated April 6, 2014 at 12:35p.m.">
+                        April 5, 2014
+                    </time>
+                </div>
+                <p>The Divinity School’s $50 million target, which is Harvard’s second smallest school, represents less
+                    than
+                    1 percent of the University’s $6.5 billion fundraising goal.</p>
+
+
+                <div class="article-comments">
+                    <a href="/article/2014/4/5/divinity-school-campaign-launch/#article-comments">
+                        <span class="comment-count">1</span>
+                        comment
+                    </a>
+                </div>
+
+
+            </div>
+        </div>
+
+
+        <div class="article">
+
+
+            <div class="article-content">
+
+                <h3><a href='/article/2014/4/4/harvard-innovation-challenge-i3/'>I3 Innovation Challenge Awards Four
+                    $10,000
+                    Prizes</a></h3>
+
+
+                <div class="article-byline">
+                    By <a href='/writer/1209929/Francesca__Annicchiarico/'>Francesca Annicchiarico</a>
+                    <time
+                            class="article-date"
+                            datetime="2014-04-04"
+                            title="Updated April 4, 2014 at 1:14a.m.">
+                        April 4, 2014
+                    </time>
+                </div>
+                <p>Three student projects won $10,000 grants in the seventh iteration of the I3 Harvard College
+                    Innovation
+                    Challenge.</p>
+
+
+                <div class="article-comments">
+                    <a href="/article/2014/4/4/harvard-innovation-challenge-i3/#article-comments">
+                        <span class="comment-count">1</span>
+                        comment
+                    </a>
+                </div>
+
+
+            </div>
+        </div>
+
+
+        <div class="article">
+
+
+            <div class="article-content">
+
+                <h3><a href='/article/2014/4/4/harvard-red-sox-fenway-organist-librarian/'>From the Harvard Library to
+                    Fenway, Red Sox Organist Says He&#39;s Ready for Opener</a></h3>
+
+
+                <div class="article-byline">
+                    By <a href='/writer/1210657/Kristina%20_D._Lorch/'>Kristina D. Lorch</a>
+                    <time
+                            class="article-date"
+                            datetime="2014-04-04"
+                            title="Updated April 5, 2014 at 2:56p.m.">
+                        April 4, 2014
+                    </time>
+                </div>
+                <p>When Joshua Kantor is not playing the Organ at famed Fenway Park, he works as a Harvard
+                    librarian.</p>
+
+
+                <div class="article-comments">
+                    <a href="/article/2014/4/4/harvard-red-sox-fenway-organist-librarian/#article-comments">
+                        <span class="comment-count">6</span>
+                        comments
+                    </a>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <div id="primary-second">
+
+
+        <div class="article bigger">
+
+
+            <div class="article-content">
+
+                <h2><a href='/article/2014/4/3/title-ix-complaint-college/'>Undergraduates Challenge College’s Sexual
+                    Assault Policy Under Title IX</a></h2>
+
+
+                <div class="article-byline">
+                    By <a href='/writer/1209925/Madeline_R._Conway/'>Madeline R. Conway</a> and <a
+                        href='/writer/1210000/Steven_S.%20_Lee/'>Steven S. Lee</a>
+                    <time
+                            class="article-date"
+                            datetime="2014-04-03"
+                            title="Updated April 4, 2014 at 3:21a.m.">
+                        April 3, 2014
+                    </time>
+                </div>
+                <p>Two people, including at least one member of the student activist campaign Our Harvard Can Do Better,
+                    have filed a complaint against Harvard with the U.S. Department of Education’s Office for Civil
+                    Rights,
+                    alleging that the College’s sexual assault policies violate Title IX.</p>
+
+
+                <div class="article-comments">
+                    <a href="/article/2014/4/3/title-ix-complaint-college/#article-comments">
+                        <span class="comment-count">9</span>
+                        comments
+                    </a>
+                </div>
+
+
+            </div>
+        </div>
+
+
+        <div class="article">
+
+
+            <div class="article-content">
+
+                <h3><a href='/article/2014/4/3/faust-sexual-misconduct-task-force/'>Amid Debate, Faust Announces
+                    Creation of
+                    Sexual Assault Task Force</a></h3>
+
+
+                <div class="article-byline">
+                    By <a href='/writer/1209926/Christine_Y.%20_Cahill/'>Christine Y. Cahill</a> and <a
+                        href='/writer/1210685/Noah_J._Delwiche/'>Noah J. Delwiche</a>
+                    <time
+                            class="article-date"
+                            datetime="2014-04-03"
+                            title="Updated April 4, 2014 at 1:16a.m.">
+                        April 3, 2014
+                    </time>
+                </div>
+                <p>The task force will be chaired by former University Provost Steven E. Hyman, who, during his tenure
+                    as
+                    provost, helped oversee the creation of the Office of Sexual Assault Prevention and Response.</p>
+
+
+                <div class="article-comments">
+                    <a href="/article/2014/4/3/faust-sexual-misconduct-task-force/#article-comments">
+                        <span class="comment-count">22</span>
+                        comments
+                    </a>
+                </div>
+
+
+            </div>
+        </div>
+
+
+        <div class="article">
+
+
+            <div class="article-content">
+
+                <h3><a href='/article/2014/4/4/mass-turnpike-allston-meeting/'>With Turnpike Project Meeting
+                    Approaching,
+                    Allstonians Hope for Positive Changes </a></h3>
+
+
+                <div class="article-byline">
+                    By <a href='/writer/1210628/Karl_M._Aspelund/'>Karl M. Aspelund</a> and <a
+                        href='/writer/1209923/Marco_J._Barber%20Grossi/'>Marco J. Barber Grossi</a>
+                    <time
+                            class="article-date"
+                            datetime="2014-04-04"
+                            title="Updated April 4, 2014 at 10:27a.m.">
+                        April 4, 2014
+                    </time>
+                </div>
+                <p>With the first community meeting regarding the Massachusetts Turnpike realignment scheduled for next
+                    Thursday, Allston residents said they hope the $260 million construction project will produce
+                    positive
+                    changes in the community. </p>
+
+
+            </div>
+        </div>
+    </div>
+    <div id="primary-third">
+
+
+        <div class="blog-shell">
+            <div class="blog-box">
+
+                <div class="blog-feature">
+                    <div class="article-image">
+                        <a href="/article/2014/4/6/drinks-that-will-knock/">
+                            <img src="http://thumbnails.thecrimson.com.s3.amazonaws.com/photos/2014/04/04/125145_1295578.jpg.305x207_q95_crop-smart_upscale.jpg"
+                                 title="Janelle Monáe Flyby" alt="Janelle Monáe Flyby"/>
+                        </a>
+                    </div>
+                    <h2 class="blog-title" id="flyby-title">
+                        <a href="/section/flyby">
+                            <span class="flyby-flyby">Flyby</span> Blog
+                        </a>
+                    </h2>
+
+                    <div class="blog-entry">
+                        <h3><a href="/article/2014/4/6/drinks-that-will-knock/">Drinks That Will Knock You Off That
+                            Tightrope: How to Pregame Janelle Monáe</a></h3>
+
+                        <div class="article-byline">
+                            <span class="article-date">25 minutes ago</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="blog-more">
+
+                    <div class="blog-another">
+                        <div class="article-thumbnail">
+                            <a href="#">
+                                <img src="http://thumbnails.thecrimson.com.s3.amazonaws.com/photos/2010/11/28/225909_1243028.jpg.40x40_q95_crop-smart_upscale.jpg"
+                                     title="Students in Lamont" alt="Students in Lamont"/>
+                            </a>
+                        </div>
+                        <div class="blog-entry">
+                            <h4><a href="/article/2014/4/5/thirsty-thursday-in-lamont/">Thirsty Thursday in Lamont</a>
+                            </h4>
+
+                            <div class="article-byline"><span class="article-date">Yesterday</span></div>
+                        </div>
+                    </div>
+
+                    <div class="blog-another">
+                        <div class="article-thumbnail">
+                            <a href="#">
+                                <img src="http://thumbnails.thecrimson.com.s3.amazonaws.com/photos/2014/04/04/150508_1295581.jpg.40x40_q95_crop-smart_upscale.jpg"
+                                     title="Taylor Swift" alt="Taylor Swift"/>
+                            </a>
+                        </div>
+                        <div class="blog-entry">
+                            <h4><a href="/article/2014/4/4/move-over-miley/">Move Over, Miley: Celebs Harvard Really
+                                Wants
+                                to See</a></h4>
+
+                            <div class="article-byline"><span class="article-date">2 days ago</span></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div id="most-read-shell" class="sidebar">
+            <div id="most-read-box">
+                <h3>Most Read</h3>
+                <ol>
+
+
+                    <li><a href='/article/2014/2/14/fifteen-hottest-2017/'>Fifteen Hottest Freshmen &#39;17: Date
+                        Spots</a>
+                    </li>
+
+
+                    <li><a href='/article/2006/2/2/the-skinny-on-harvards-rare-book/'>The Skinny on Harvard’s Rare Book
+                        Collection</a></li>
+
+
+                    <li><a href='/article/2014/3/31/Harvard-sexual-assault/'>Dear Harvard: You Win</a></li>
+
+
+                    <li><a href='/article/1998/10/14/urban-outfitters-chain-pulls-racist-costumes/'>Urban Outfitters
+                        Chain
+                        Pulls Racist Costumes</a></li>
+
+
+                    <li><a href='/article/2014/4/3/title-ix-complaint-college/'>Undergraduates Challenge College’s
+                        Sexual
+                        Assault Policy Under Title IX</a></li>
+
+                </ol>
+            </div>
+        </div>
+
+
+        <div class="sidekick-shell">
+            <div class="sidekick">
+                <div id="ad-TheCrimson_Homepage_ATF_300x250" style="width: 300px; height: 250px;">
+                    <script type='text/javascript'>
+                        if (Crimson.Responsive.isMobile === (0 === 1)
+                                || (0 === 0)) {
+                            googletag.cmd.push(function () {
+                                googletag.display('ad-TheCrimson_Homepage_ATF_300x250');
+                            });
+                        }
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+    <section id="row">
+
+        <div class="row article">
+            <a href="/article/2014/4/4/harvard-red-sox-fenway-organist-librarian/">
+                <img src="http://thumbnails.thecrimson.com.s3.amazonaws.com/photos/2014/04/03/221522_1295557.jpg.130x90_q95_crop-smart_upscale.jpg"
+                     title="Perfect pitch" alt="Perfect pitch"/>
+            </a>
+
+            <div class="row-section article-section">
+                <a href="/tag/features">Features</a>
+            </div>
+            <h3>
+                <a href="/article/2014/4/4/harvard-red-sox-fenway-organist-librarian/">
+                    From the Harvard Library to Fenway, Red Sox Organist Says He&#39;s Ready for Opener
+                </a>
+            </h3>
+        </div>
+
+        <div class="row article">
+            <a href="/article/2014/4/3/unpaid-internships-experience/">
+                <img src="http://thumbnails.thecrimson.com.s3.amazonaws.com/photos/2014/04/01/233404_1295464.jpg.130x90_q95_crop-smart_upscale.jpg"
+                     title="Will Work for Experience" alt="Will Work for Experience"/>
+            </a>
+
+            <div class="row-section article-section">
+                <a href="/tag/scrutiny">Scrutiny</a>
+            </div>
+            <h3>
+                <a href="/article/2014/4/3/unpaid-internships-experience/">
+                    Unpaid Internships: A Priceless Experience?
+                </a>
+            </h3>
+        </div>
+
+        <div class="row article">
+            <a href="/article/2014/4/1/knock-em-dead/">
+                <img src="http://thumbnails.thecrimson.com.s3.amazonaws.com/photos/2014/04/01/013728_1295412.jpg.130x90_q95_crop-smart_upscale.jpg"
+                     title="Comedy Cover Fox" alt="Comedy Cover Fox"/>
+            </a>
+
+            <div class="row-section article-section">
+                <a href="/tag/arts">Arts</a>
+            </div>
+            <h3>
+                <a href="/article/2014/4/1/knock-em-dead/">
+                    Knock &#39;Em Dead: At Harvard, Crafting Comedy Is No Laughing Matter
+                </a>
+            </h3>
+        </div>
+
+        <div class="row article">
+            <a href="/article/2014/4/1/harvard-hockey-1989-championship-25-years-perspective/">
+                <img src="http://thumbnails.thecrimson.com.s3.amazonaws.com/photos/2014/04/01/011148_1295407.jpg.130x90_q95_crop-smart_upscale.jpg"
+                     title="The Goal" alt="The Goal"/>
+            </a>
+
+            <div class="row-section article-section">
+                <a href="/tag/men&#39;s-ice-hockey">Men&#39;s Ice Hockey</a>
+            </div>
+            <h3>
+                <a href="/article/2014/4/1/harvard-hockey-1989-championship-25-years-perspective/">
+                    Harvard Hockey 1989: A Championship in Perspective
+                </a>
+            </h3>
+        </div>
+
+    </section>
+    <section id="secondary">
+    <div id="secondary-first">
+        <div id="section-opinion" class="section-box">
+            <h2 class="section-header"><a href="/section/opinion/">Opinion</a></h2>
+
+            <div class="raise" style="position: relative; z-index: 5;">
+
+
+                <div class="section-article">
+
+                    <div class="article-section">
+                        <a href="/tag/editorials">Editorials</a>
+                    </div>
+                    <h3><a href='/article/2014/4/4/General-Education-reform/'>Reform and Restructure General
+                        Education</a>
+                    </h3>
+
+                    <div class="article-byline">
+                        By <a href='/writer/1626/The%20Crimson__Staff/'>The Crimson Staff</a>
+                        <time
+                                class="article-date"
+                                datetime="2014-04-04"
+                                title="Updated April 4, 2014 at 3:33a.m.">
+                            April 4, 2014
+                        </time>
+                    </div>
+                    <p>Many students dislike the current General Education program. </p>
+                </div>
+
+
+                <div class="section-article">
+
+                    <div class="article-section">
+                        <a href="/tag/editorials">Editorials</a>
+                    </div>
+                    <h3><a href='/article/2014/4/2/harvard-video-recording-in-classrooms/'>Keep It in the Classroom </a>
+                    </h3>
+
+                    <div class="article-byline">
+                        By <a href='/writer/1626/The%20Crimson__Staff/'>The Crimson Staff</a>
+                        <time
+                                class="article-date"
+                                datetime="2014-04-02"
+                                title="Updated April 2, 2014 at 2:50a.m.">
+                            April 2, 2014
+                        </time>
+                    </div>
+                    <p>Freedom of expression in the classroom--both for students and for faculty--is crucial to
+                        learning. </p>
+                </div>
+
+
+                <div class="section-article">
+
+                    <div class="article-section">
+                        <a href="/tag/columns">Columns</a>
+                    </div>
+                    <h3><a href='/column/the-direct-message/article/2014/4/4/twitter-types/'>The 10 People You Meet On
+                        Twitter</a></h3>
+
+                    <div class="article-byline">
+                        By <a href='/writer/1210798/Declan_P._Garvey/'>Declan P. Garvey</a>
+                        <time
+                                class="article-date"
+                                datetime="2014-04-04"
+                                title="Updated April 4, 2014 at 1:53p.m.">
+                            April 4, 2014
+                        </time>
+                    </div>
+
+                </div>
+
+
+                <div class="section-article">
+
+                    <div class="article-section">
+                        <a href="/tag/columns">Columns</a>
+                    </div>
+                    <h3><a href='/column/12-point-double-spaced/article/2014/4/4/Startups-boston-popularity/'>Start Me
+                        Up</a></h3>
+
+                    <div class="article-byline">
+                        By <a href='/writer/1209441/Jacob_R._Drucker/'>Jacob R. Drucker</a>
+                        <time
+                                class="article-date"
+                                datetime="2014-04-04"
+                                title="Updated April 4, 2014 at 1:21p.m.">
+                            April 4, 2014
+                        </time>
+                    </div>
+
+                </div>
+
+
+                <div class="section-article">
+
+                    <div class="article-section">
+                        <a href="/tag/op-eds">Op-Eds</a>
+                    </div>
+                    <h3><a href='/article/2014/4/4/Harvard-sexual-assault/'>Schools Must Prevent the “Second
+                        Rape&quot;</a>
+                    </h3>
+
+                    <div class="article-byline">
+                        By <a href='/writer/1211052/Diane_L._Rosenfeld/'>Diane L. Rosenfeld</a>
+                        <time
+                                class="article-date"
+                                datetime="2014-04-04"
+                                title="Updated April 4, 2014 at 3:33a.m.">
+                            April 4, 2014
+                        </time>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <div id="secondary-second">
+
+
+        <div class="article">
+
+            <h3><a href='/article/2014/4/4/harvard-square-winthrop-park-renovation-proposal/'>Cambridge Votes Down
+                Proposed
+                Winthrop Square Development</a></h3>
+
+            <div class="article-byline">
+                By <a href='/writer/1210668/Ivan_B.%20K._Levingston/'>Ivan B. K. Levingston</a> and <a
+                    href='/writer/1210593/Celeste_M._Mendoza/'>Celeste M. Mendoza</a>
+                <span class="article-date">2 days ago</span>
+            </div>
+            <p>Cambridge developer Raj Dhanda will be allowed to submit a new plan for three stories of residential
+                microunits on top of the existing Galeria building.</p>
+
+        </div>
+
+
+        <div class="article">
+
+            <h3><a href='/article/2014/4/3/tax-reform-cost-endowment/'> Tax Reform Plan Could Cost Harvard Millions,
+                Though
+                Passage Unlikely</a></h3>
+
+            <div class="article-byline">
+                By <a href='/writer/1209926/Christine_Y.%20_Cahill/'>Christine Y. Cahill</a> and <a
+                    href='/writer/1209845/Amna_H._Hashmi/'>Amna H. Hashmi</a>
+                <span class="article-date">3 days ago</span>
+            </div>
+            <p>Congressman David L. Camp’s tax reform plan could cost Harvard tens of millions of dollars in endowment
+                taxes
+                if passed.</p>
+
+        </div>
+
+
+        <div class="article">
+
+            <h3><a href='/article/2014/4/3/fas-sexual-assault-policy-scrutinized/'>Op-Ed Draws Attention to 20-Year-Old
+                FAS
+                Policy</a></h3>
+
+            <div class="article-byline">
+                By <a href='/writer/1209925/Madeline_R._Conway/'>Madeline R. Conway</a> and <a
+                    href='/writer/1210000/Steven_S.%20_Lee/'>Steven S. Lee</a>
+                <span class="article-date">3 days ago</span>
+            </div>
+            <p>Criticism is nothing new for the Faculty of Arts and Sciences policy on sexual assault and misconduct,
+                which
+                governs the handling of incidents of assault within the College.</p>
+
+        </div>
+
+
+        <div class="more-news">
+            <h3>More News</h3>
+            <ul>
+
+
+                <li><a href='/article/2014/4/2/ellison-says-ad-board/'>Ellison Says Ad Board Has Not Searched Student
+                    Emails
+                    Since At Least Fall 2002</a></li>
+
+
+                <li><a href='/article/2014/4/2/three-undergraduates-expelled-violence/'>Three Undergraduates Expelled on
+                    Charges of Physical Violence</a></li>
+
+
+                <li><a href='/article/2014/4/2/faculty-still-concerned-honor/'>Faculty Still Concerned About Honor Code
+                    Affirmation</a></li>
+
+
+                <li><a href='/article/2014/4/3/12-star-advising-awards/'>Twelve College Advisors Recognized with Annual
+                    Award</a></li>
+
+
+                <li><a href='/article/2014/4/3/public-health-harvardx-two-courses/'>School of Public Health Launches Two
+                    New
+                    MOOCs</a></li>
+
+            </ul>
+        </div>
+    </div>
+    <div id="secondary-third">
+        <div id="photo-box">
+            <h2 class="media-title"><a href="/section/media/">Photo</a></h2>
+
+            <div class="media-entry">
+                <a href="/gallery/2014/4/4/today-in-photos-040414/">
+                    <img src="http://thumbnails.thecrimson.com.s3.amazonaws.com/photos/2014/04/03/213637_1295538.jpg.143x114_q95_crop-smart_upscale.jpg"
+                         title="Today in Photos (04/04/2014)" alt="Today in Photos (04/04/2014)"/>
+                </a>
+                <h4><a href="/gallery/2014/4/4/today-in-photos-040414/">Today in Photos (04/04/2014)</a></h4>
+            </div>
+
+            <div class="media-entry">
+                <a href="/column/sketches/gallery/2014/4/4/faces-of-memorial-hall/">
+                    <img src="http://thumbnails.thecrimson.com.s3.amazonaws.com/photos/2014/04/03/221009_1295555.jpg.143x114_q95_crop-smart_upscale.jpg"
+                         title="Faces of Memorial Hall" alt="Faces of Memorial Hall"/>
+                </a>
+                <h4><a href="/column/sketches/gallery/2014/4/4/faces-of-memorial-hall/">Faces of Memorial Hall</a></h4>
+            </div>
+
+            <div class="media-entry">
+                <a href="/gallery/2014/4/3/this-week-in-fm-4214/">
+                    <img src="http://thumbnails.thecrimson.com.s3.amazonaws.com/photos/2014/03/30/152405_1295329.jpg.143x114_q95_crop-smart_upscale.jpg"
+                         title="This Week in FM (04/03/2014)" alt="This Week in FM (04/03/2014)"/>
+                </a>
+                <h4><a href="/gallery/2014/4/3/this-week-in-fm-4214/">This Week in FM (04/03/2014)</a></h4>
+            </div>
+
+        </div>
+
+
+        <div id="media-shell">
+            <div id="media-box">
+                <h2 class="media-title"><a href="/section/media/">Media</a></h2>
+
+
+                <div class="media-feature">
+                    <div class="media-entry">
+                        <a href="/video/2014/4/5/fenway-organist/">
+                            <img src="http://thumbnails.thecrimson.com.s3.amazonaws.com/photos/2014/04/05/014214_fenway-organist.jpg.300x200_q95_upscale.jpg"
+                                 title="Fenway Organist" alt="Fenway Organist"/>
+                        </a>
+
+                        <h3><a href="/video/2014/4/5/fenway-organist/">Fenway Organist</a></h3>
+
+                        <div class="media-byline"><span class="media-date">Yesterday</span></div>
+                    </div>
+                </div>
+                <div class="media-more">
+
+
+                    <div class="media-another">
+                        <div class="media-thumbnail">
+                            <a href="/video/2014/3/27/herbie-hancock-video-improving-improvisation/">
+                                <img src="http://thumbnails.thecrimson.com.s3.amazonaws.com/photos/2014/03/29/221430_herbie-hancock-video-improving-improvisation.jpg.100x100_q95_upscale.jpg"
+                                     title="Herbie Hancock Improvises" alt="Herbie Hancock Improvises"/>
+                            </a>
+                        </div>
+                        <div class="media-entry">
+                            <h4><a href="/video/2014/3/27/herbie-hancock-video-improving-improvisation/">Herbie Hancock
+                                Improvises</a></h4>
+
+                            <div class="media-byline"><span class="media-date">10 days ago</span></div>
+                        </div>
+                    </div>
+
+
+                    <div class="media-another">
+                        <div class="media-thumbnail">
+                            <a href="/video/2014/2/27/UC_250K_Campaign/">
+                                <img src="http://thumbnails.thecrimson.com.s3.amazonaws.com/photos/2014/02/27/101226_uc_250k_campaign.jpg.100x100_q95_upscale.jpg"
+                                     title="UC 250K Campaign " alt="UC 250K Campaign "/>
+                            </a>
+                        </div>
+                        <div class="media-entry">
+                            <h4><a href="/video/2014/2/27/UC_250K_Campaign/">UC 250K Campaign </a></h4>
+
+                            <div class="media-byline"><span class="media-date">February 27, 2014</span></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div id="fm-shell">
+            <div id="fm-box">
+                <div id="fm-container">
+                    <div id="fm-first">
+                        <div id="fm-feature">
+
+
+                            <div class="section-article section-feature">
+                                <div class="article-image">
+                                    <a href="/article/2014/4/4/grandparents-cb23-bible/">
+
+
+                                        <img src="http://static.thecrimson.com/images/spacer.gif" alt="" height="210"
+                                             width="300"/>
+
+
+                                    </a>
+                                </div>
+
+                                <div id="fm-logo">
+                                    <a href="/section/fm/"><img src="http://static.thecrimson.com/images/fm-logo.png"/></a>
+                                </div>
+
+                                <div class="section-feature-text">
+                                    <div class="article-section">
+                                        <a href="/tag/gen-ed">Gen Ed</a>
+                                    </div>
+                                    <h2><a href='/article/2014/4/4/grandparents-cb23-bible/'>Grandparents in CB23: The
+                                        Real
+                                        Senior Students</a></h2>
+
+                                    <div class="article-byline">
+                                        By <a href='/writer/1208213/Nicole_J.%20_Levin/'>Nicole J. Levin</a>
+                                        <span class="article-date">2 days ago</span>
+                                    </div>
+                                    <p>Richard A. Slone has never missed a lecture by Shaye J.D. Cohen, Littauer
+                                        Professor
+                                        of Hebrew Literature and Philosophy. Like certain unnamed students in Cohen’s
+                                        Culture and Belief course, he doesn’t make it to 10 a.m. class. He knows that
+                                        they
+                                        are taped. However, unlike most of the students in the class, he listens to them
+                                        on
+                                        his bike as he trains for triathlons. Also, he’s “semi-retired,” which I guess
+                                        most
+                                        of us aren’t.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="fm-second">
+
+
+                        <div class="section-article">
+
+                            <div class="article-section">
+                                <a href="/tag/admissions">Admissions</a>
+                            </div>
+                            <h3><a href='/article/2014/4/3/the-legend-of-the-z-list/'>The Legend of the Z-List</a></h3>
+
+                            <div class="article-byline">
+                                By <a href='/writer/1210133/Forrest_S._Brown/'>Forrest S. Brown</a>
+                                <time
+                                        class="article-date"
+                                        datetime="2014-04-03"
+                                        title="Updated April 1, 2014 at 8:42p.m.">
+                                    April 3, 2014
+                                </time>
+                            </div>
+
+                        </div>
+
+
+                        <div class="section-article">
+
+                            <div class="article-section">
+                                <a href="/tag/student-life">Student Life</a>
+                            </div>
+                            <h3><a href='/article/2014/4/3/auburn-cemetery/'>Among Them</a></h3>
+
+                            <div class="article-byline">
+                                By <a href='/writer/1210596/Maia%20R.__Silber/'>Maia R. Silber</a>
+                                <time
+                                        class="article-date"
+                                        datetime="2014-04-03"
+                                        title="Updated April 1, 2014 at 9:15p.m.">
+                                    April 3, 2014
+                                </time>
+                            </div>
+
+                        </div>
+
+
+                        <div class="section-article">
+
+                            <div class="article-section">
+                                <a href="/tag/college">College</a>
+                            </div>
+                            <h3><a href='/article/2014/4/3/where-were-you-admissions/'>Admissions Stories: Where Were
+                                You
+                                When You Got In? </a></h3>
+
+                            <div class="article-byline">
+                                By <a href='/writer/1210675/Kathryn_J._Gundersen/'>Kathryn J. Gundersen</a>
+                                <time
+                                        class="article-date"
+                                        datetime="2014-04-03"
+                                        title="Updated April 2, 2014 at 9:16p.m.">
+                                    April 3, 2014
+                                </time>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+    <section id="tertiary">
+    <div id="tertiary-first">
+        <div id="section-sports" class="section-box">
+            <div class="section-box-first">
+                <h2 class="section-header"><a href="/section/sports/">Sports</a></h2>
+
+
+                <div class="section-article section-feature">
+                    <div class="article-image">
+                        <a href="/blog/the-back-page/article/2014/4/6/tweets-of-the-week-4-6/">
+
+
+                        </a>
+                    </div>
+
+                    <div class="section-feature-text">
+                        <div class="article-section">
+                            <a href="/tag/sports-blog">Sports Blog</a>
+                        </div>
+                        <h2><a href='/blog/the-back-page/article/2014/4/6/tweets-of-the-week-4-6/'>Tweets of the
+                            Week</a>
+                        </h2>
+
+                        <div class="article-byline">
+                            By <a href='/writer/1210626/Jake__Meagher/'>Jake Meagher</a>
+                            <span class="article-date">2 hours ago</span>
+                        </div>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+            <div class="section-box-second">
+
+
+                <div class="section-article">
+
+                    <div class="article-section">
+                        <a href="/tag/baseball">Baseball</a>
+                    </div>
+                    <h3><a href='/blog/the-back-page/article/2014/4/6/alumni-update-bryant-chu-hermann/'>Alumni Update:
+                        Bryant &#39;09, Chu &#39;06-07, Hermann &#39;06</a></h3>
+
+                    <div class="article-byline">
+                        By <a href='/writer/1210508/Caleb__Lee/'>Caleb Lee</a>
+                        <time
+                                class="article-date"
+                                datetime="2014-04-06T10:25:44"
+                                title="Updated April 6, 2014 at 10:25a.m.">
+                            April 6, 2014
+                        </time>
+                    </div>
+
+                </div>
+
+
+                <div class="section-article">
+
+                    <div class="article-section">
+                        <a href="/tag/men&#39;s-volleyball">Men&#39;s Volleyball</a>
+                    </div>
+                    <h3><a href='/article/2014/4/5/harvard-mens-volleyball-penn-state/'>Men&#39;s Volleyball Comes Up
+                        Short
+                        Against Conference Foe Penn State</a></h3>
+
+                    <div class="article-byline">
+                        By <a href='/writer/1210217/Julian__Ryan/'>Julian Ryan</a>
+                        <time
+                                class="article-date"
+                                datetime="2014-04-05"
+                                title="Updated April 5, 2014 at 4:29p.m.">
+                            April 5, 2014
+                        </time>
+                    </div>
+
+                </div>
+
+
+                <div class="section-article">
+
+                    <div class="article-section">
+                        <a href="/tag/men&#39;s-volleyball">Men&#39;s Volleyball</a>
+                    </div>
+                    <h3><a href='/article/2014/4/4/volleyball-takes-on-penn-state/'>Volleyball Takes on Penn State For
+                        First
+                        Place </a></h3>
+
+                    <div class="article-byline">
+                        By <a href='/writer/1210217/Julian__Ryan/'>Julian Ryan</a>
+                        <time
+                                class="article-date"
+                                datetime="2014-04-04"
+                                title="Updated April 3, 2014 at 8:18p.m.">
+                            April 4, 2014
+                        </time>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <div id="section-arts" class="section-box">
+            <div class="section-box-first">
+                <h2 class="section-header"><a href="/section/arts/">Arts</a></h2>
+
+
+                <div class="section-article section-feature">
+                    <div class="article-image">
+                        <a href="/column/the-gospel-of-rap/article/2014/4/4/gospel-of-rap-kendrick-lamar/">
+
+
+                            <img src="http://thumbnails.thecrimson.com.s3.amazonaws.com/photos/2014/02/24/235915_1294090.png.390x250_q95_crop-smart_upscale.png"
+                                 title="Gospel of Rap Art" alt="Gospel of Rap Art"/>
+
+
+                        </a>
+                    </div>
+
+                    <div class="section-feature-text">
+                        <div class="article-section">
+                            <a href="/tag/columns">Columns</a>
+                        </div>
+                        <h2><a href='/column/the-gospel-of-rap/article/2014/4/4/gospel-of-rap-kendrick-lamar/'>The New
+                            Voice
+                            of Hip Hop</a></h2>
+
+                        <div class="article-byline">
+                            By <a href='/writer/1210957/Andrew_I._Wyner/'>Andrew I. Wyner</a>
+                            <span class="article-date">2 days ago</span>
+                        </div>
+                        <p>Andrew Wyner discusses the broader implications of Kendrick Lamar&#39;s unique voice in the
+                            hip
+                            hop world. </p>
+                    </div>
+                </div>
+            </div>
+            <div class="section-box-second">
+
+
+                <div class="section-article">
+
+                    <div class="article-section">
+                        <a href="/tag/columns">Columns</a>
+                    </div>
+                    <h3><a href='/column/hidden-ideologies/article/2014/4/4/hidden-ideologies-monuments-men/'>Kluge, Not
+                        Clooney: Two Movies to Watch Instead of &quot;The Monuments Men&quot;</a></h3>
+
+                    <div class="article-byline">
+                        By <a href='/writer/1210961/Rachel_S._Wong/'>Rachel S. Wong</a>
+                        <time
+                                class="article-date"
+                                datetime="2014-04-04"
+                                title="Updated April 3, 2014 at 10:03p.m.">
+                            April 4, 2014
+                        </time>
+                    </div>
+
+                </div>
+
+
+                <div class="section-article">
+
+                    <div class="article-section">
+                        <a href="/tag/film">Film</a>
+                    </div>
+                    <h3><a href='/article/2014/4/4/under-the-skin-glazer/'>&quot;Under the Skin&quot; with Director
+                        Jonathan
+                        Glazer</a></h3>
+
+                    <div class="article-byline">
+                        By <a href='/writer/1210254/Alan_R._Xie/'>Alan R. Xie</a>
+                        <time
+                                class="article-date"
+                                datetime="2014-04-04"
+                                title="Updated April 4, 2014 at 12:08a.m.">
+                            April 4, 2014
+                        </time>
+                    </div>
+
+                </div>
+
+
+                <div class="section-article">
+
+                    <div class="article-section">
+                        <a href="/tag/on-campus">On Campus</a>
+                    </div>
+                    <h3><a href='/article/2014/4/4/patience-review/'>&quot;Patience; or, Bunthorne’s Bride&quot; Flawed
+                        but
+                        Enjoyable </a></h3>
+
+                    <div class="article-byline">
+                        By <a href='/writer/1210549/David_J._Kurlander/'>David J. Kurlander</a>
+                        <time
+                                class="article-date"
+                                datetime="2014-04-04"
+                                title="Updated April 4, 2014 at 1:07a.m.">
+                            April 4, 2014
+                        </time>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div id="tertiary-second">
+
+
+        <div class="blog-shell">
+            <div class="blog-box">
+
+                <div class="blog-feature">
+                    <div class="article-image">
+                        <a href="/blog/the-back-page/article/2014/4/2/wesley-saunders-henson-award/">
+                            <img src="http://thumbnails.thecrimson.com.s3.amazonaws.com/photos/2014/01/31/232632_1293197.jpg.305x207_q95_crop-smart_upscale.jpg"
+                                 title="Wes Saunders" alt="Wes Saunders"/>
+                        </a>
+                    </div>
+                    <h2 class="blog-title" id="backpage-title">
+                        <a href="/blog/the-back-page/"><span class="backpage-backpage">The Back Page</span> The Crimson
+                            Sports Blog</a>
+                    </h2>
+
+                    <div class="blog-entry">
+                        <h3><a href="/blog/the-back-page/article/2014/4/2/wesley-saunders-henson-award/">Awards Keep
+                            Coming
+                            for Saunders</a></h3>
+
+                        <div class="article-byline">
+                            <span class="article-date">4 days ago</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="blog-more">
+
+                    <div class="blog-another">
+                        <div class="article-thumbnail">
+                            <a href="/blog/the-back-page/article/2014/4/2/ex-post-facto/">
+                                <img src="http://thumbnails.thecrimson.com.s3.amazonaws.com/photos/2013/09/21/174310_1289355.jpg.40x40_q95_crop-smart_upscale.jpg"
+                                     title="" alt=""/>
+                            </a>
+                        </div>
+                        <div class="blog-entry">
+                            <h4><a href="/blog/the-back-page/article/2014/4/2/ex-post-facto/">Ex Post Facto—The Weekend
+                                in
+                                Sports: 3/31/14</a></h4>
+
+                            <div class="article-byline"><span class="article-date">4 days ago</span></div>
+                        </div>
+                    </div>
+
+                    <div class="blog-another">
+                        <div class="article-thumbnail">
+                            <a href="/blog/the-back-page/article/2014/3/22/fitz-texans/">
+                                <img src="http://thumbnails.thecrimson.com.s3.amazonaws.com/photos/2012/09/05/002246_1278787.jpeg.40x40_q95_crop-smart_upscale.jpg"
+                                     title="Fitz" alt="Fitz"/>
+                            </a>
+                        </div>
+                        <div class="blog-entry">
+                            <h4><a href="/blog/the-back-page/article/2014/3/22/fitz-texans/">Ryan Fitzpatrick &#39;05
+                                Signs
+                                Deal with Houston Texans</a></h4>
+
+                            <div class="article-byline"><span class="article-date">March 22, 2014</span></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="sidekick">
+            <div id="ad-TheCrimson_Homepage_BTF_300x250" style="width: 300px; height: 250px;">
+                <script type='text/javascript'>
+                    if (Crimson.Responsive.isMobile === (0 === 1)
+                            || (0 === 0)) {
+                        googletag.cmd.push(function () {
+                            googletag.display('ad-TheCrimson_Homepage_BTF_300x250');
+                        });
+                    }
+                </script>
+            </div>
+        </div>
+
+
+        <div class="sidekick">
+        </div>
+    </div>
+    </section>
+
+{% endblock body %}
+
+<div class="leaderboard">
+    <div id="ad-TheCrimson_AllArticles_BTF_728x90" style="width: 728px; height: 90px;">
+        <script type='text/javascript'>
+            if (Crimson.Responsive.isMobile === (0 === 1)
+                    || (0 === 0)) {
+                googletag.cmd.push(function () {
+                    googletag.display('ad-TheCrimson_AllArticles_BTF_728x90');
+                });
+            }
+        </script>
+    </div>
+</div>
+<footer>
+    <div id="footer-first">
+        <h1><a href="/">The Harvard Crimson</a></h1>
+    </div>
+    <div id="footer-second">
+        <p>Copyright &copy; 2014 The Harvard Crimson, Inc.</p>
+        <nav id="footer-nav">
+            <ul>
+                <li><a href="/about/privacy/">Privacy Policy</a></li>
+                <li><a href="/about/permissions/">Rights &amp; Permissions</a></li>
+                <li><a href="/contact/">Contact Us</a></li>
+                <li><a href="/contact/">Corrections</a></li>
+                <li><a href="/subscribe/">Subscriptions</a></li>
+                <li><a href="/sitemap/">Archives</a></li>
+                <li><a href="/sitemap/contributors/">Writers</a></li>
+            </ul>
+        </nav>
+    </div>
+</footer>
+
+<script type="text/javascript">if (!NREUMQ.f) {
+    NREUMQ.f = function () {
+        NREUMQ.push(["load", new Date().getTime()]);
+        var e = document.createElement("script");
+        e.type = "text/javascript";
+        e.src = (("http:" === document.location.protocol) ? "http:" : "https:") + "//" + "js-agent.newrelic.com/nr-100.js";
+        document.body.appendChild(e);
+        if (NREUMQ.a)NREUMQ.a();
+    };
+    NREUMQ.a = window.onload;
+    window.onload = NREUMQ.f;
+}
+;
+NREUMQ.push(["nrfj", "beacon-3.newrelic.com", "35f86da418", "470626", "YlVaZxdYV0NSVkVRClsffkYLWk1ZXFseXA9UXl9cS1RQVFdZVE8ER1UWUARaUVUJc1RMBl12SlwIelhTW1B8UQFRXF1EBEtcHkNHXlsARkNnQQBITFVAQQ==", 0, 7, new Date().getTime(), "", "", "", "", ""]);</script>
+</body>
+</html>

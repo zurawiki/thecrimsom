@@ -1,7 +1,7 @@
 from django.http import Http404
 from django.shortcuts import render_to_response
 
-from mysite.models import Article
+from mysite.models import Article, BreakingNews
 
 
 def article_detail(request, year, month, day, page_slug):
@@ -61,3 +61,11 @@ def section_arts(request):
     data = {}
     # fill it
     return render_to_response('section/arts.html', data)
+
+
+def home(request):
+    data = {}
+    try:
+        data['breaking_news'] = BreakingNews.objects.filter(active=True).latest('when')
+    finally:
+        return render_to_response('homepage.html', data)
