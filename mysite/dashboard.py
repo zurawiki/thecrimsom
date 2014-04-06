@@ -21,17 +21,10 @@ class MainDashboard(Dashboard):
         site_name = get_admin_site_name(context)
 
         self.children.append(modules.AppList(
-            _('Advertising Contracts'),
-            column=1,
-            models=('contracts.*',),
-        )
-        )
-
-        self.children.append(modules.AppList(
-            _('User Accounts'),
+            _('Mysite'),
             column=1,
             collapsible=False,
-            models=('account.*', 'django.contrib.auth.*', 'mysite.*'),
+            models=('mysite.*'),
         )
         )
 
@@ -53,7 +46,7 @@ class MainDashboard(Dashboard):
             _('Server Administration'),
             column=2,
             collapsible=False,
-            exclude=('account.*', 'django.contrib.auth.*', 'mysite.*', 'contracts.*'),
+            exclude=('mysite.*'),
         ))
 
 

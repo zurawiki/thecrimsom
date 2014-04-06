@@ -1,37 +1,43 @@
-from django.contrib import messages
-from django.contrib.auth.decorators import login_required
-from django.forms import ModelForm
-from django.http import HttpResponseRedirect
-from django.shortcuts import render
+from django.http import Http404
+from django.shortcuts import render_to_response
 
-from contracts.models import Advertiser
+from mysite.models import Article
 
 
-__author__ = 'roger'
+def article_detail(request, year, month, day, page_slug):
+    try:
+        a = Article.objects.get(slug=page_slug, )
+        if a.pub_status == 1:
+            return render_to_response('article/detail.html', {'article': a})
+        else:
+            raise Http404
+    except Article.DoesNotExist:
+        raise Http404
 
 
-class AdvertiserForm(ModelForm):
-    class Meta:
-        model = Advertiser
+def section_news(request):
+    return None
 
 
-@login_required
-def register_advertiser(request):
-    if request.method == 'POST':
-        form = AdvertiserForm(request.POST)  # A form bound to the POST data
-        if form.is_valid():  # All validation rules pass
-            advertiser = form.save()
-            profile = request.user.get_profile()
-            profile.advertiser = advertiser
-            profile.save()
-            messages.success(request, 'Advertiser profile updated.')
-            if 'next' in request.GET:
-                return HttpResponseRedirect(request.GET['next'])
-            else:
-                return HttpResponseRedirect('/')
-    else:
-        form = AdvertiserForm(instance=request.user.get_profile().advertiser)
-        if request.user.get_profile().advertiser is None:
-            messages.warning(request, 'Before ordering an ad contract, you must first fill in your contact profile.')
-        return render(request, 'advertiser/form.html', {'form': form})
+def section_opinion(request):
+    return None
 
+
+def section_magazine(request):
+    return None
+
+
+def section_sports(request):
+    return None
+
+
+def section_media(request):
+    return None
+
+
+def section_flyby(request):
+    return None
+
+
+def section_admissions(request):
+    return None

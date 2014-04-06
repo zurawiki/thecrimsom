@@ -144,11 +144,12 @@ INSTALLED_APPS = [
 
     # project
     "mysite",
-    "contracts",
+    # "contracts",
 
     # custom
     # "django.contrib.localflavor",
     'south',
+    'redactor',
 ]
 
 # A sample logging configuration. The only tangible logging
@@ -186,7 +187,7 @@ FIXTURE_DIRS = [
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
-ACCOUNT_OPEN_SIGNUP = True
+ACCOUNT_OPEN_SIGNUP = False
 ACCOUNT_USE_OPENID = False
 ACCOUNT_REQUIRED_EMAIL = True
 ACCOUNT_EMAIL_UNIQUE = True
@@ -203,5 +204,9 @@ AUTH_PROFILE_MODULE = 'mysite.UserProfile'
 
 # Grappelli
 
-GRAPPELLI_ADMIN_TITLE = 'The Harvard Lampoon'
+# GRAPPELLI_ADMIN_TITLE = 'The Harvard Lampoon'
 GRAPPELLI_INDEX_DASHBOARD = 'mysite.dashboard.MainDashboard'
+
+# Redactor
+REDACTOR_OPTIONS = {'lang': 'en'}
+REDACTOR_UPLOAD = 'uploads/'

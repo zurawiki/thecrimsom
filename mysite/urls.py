@@ -10,9 +10,23 @@ from mysite import views
 
 urlpatterns = patterns("",
                        url(r"^$", TemplateView.as_view(template_name="homepage.html"), name="home"),
-                       url(r"^register$", views.register_advertiser),
-                       url(r"^contracts/", include('contracts.urls')),
+                       url(r'^section/news/$', views.section_news),
+                       url(r'^section/opinion/$', views.section_opinion),
+                       url(r'^section/fm/$', views.section_magazine),
+                       url(r'^section/sports/$', views.section_sports),
+                       url(r'^section/media/$', views.section_media),
+                       url(r'^section/flyby/$', views.section_flyby),
+                       url(r'^admissions/$', views.section_admissions),
+                       url(r'^article/(?P<year>\d{4})/(?P<month>\d{2})/(?P<day>\d{2})/(?P<page_slug>[\w-]+)/$',
+                           views.article_detail),
+
+
+                       url(r'^article/(?P<year>\d{4})/(?P<month>\d{2})/(?P<day>\d{2})/(?P<page_slug>[\w-]+)/$',
+                           views.article_detail),
+
+
                        (r'^admin/filebrowser/', include(site.urls)),
+                       (r'^redactor/', include('redactor.urls')),
                        (r'^grappelli/', include('grappelli.urls')),  # grappelli URLS
                        (r'^admin/', include(admin.site.urls)),  # admin site
                        url(r"^accounts/", include("account.urls")),

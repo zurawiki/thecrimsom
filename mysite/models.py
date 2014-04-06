@@ -1,21 +1,34 @@
-from django.contrib.auth.models import User
 from django.db import models
-from django.db.models.signals import post_save
-
-from contracts.models import Advertiser
 
 
-class UserProfile(models.Model):  
-    user = models.OneToOneField(User)
-    # other fields here
-    advertiser =  models.OneToOneField(Advertiser, on_delete=models.SET_NULL, null=True, blank=True)
-    def __str__(self):  
-          return "%s's profile" % self.user
+class Section(models.Model):
+    name = models.CharField(blank=False, max_length=50, db_index=True)
+
+    def __str__(self):
+        return self.name
 
 
-def create_user_profile(sender, instance, created, **kwargs):
-    if created:
-        profile, created = UserProfile.objects.get_or_create(user=instance)
+class Article(models.Model):
+    PUB_CHOICES = (
+        (0, 'Draft'),
+        (1, 'Published'),
+        (-1, 'Deleted'),
+    )
 
+    title = models.CharField(max_length=200, blank=False, null=False, default='')
+    subtitle = models.CharField(max_length=255, blank=True, null=False, default='')
+    author = models.CharField(max_length=70, blank=False, null=False, default='')
+    section = models.ForeignKey(Section, null=False, related_name='content')
 
-post_save.connect(create_user_profile, sender=User)
+    content = models.TextField(blank=True, null=False, default='')
+
+    slug = models.SlugField(max_length=70, unique=True, db_index=True, help_text="""
+            The text that will be displayed in the URL of this article.
+            Can only contain letters, numbers, and dashes (-).
+            """
+    )
+
+    pub_status = models.IntegerField(null=False, choices=PUB_CHOICES,
+                                     default=0, db_index=True)
+    created_on = models.DateTimeField(auto_now_add=True, db_index=True)
+    modified_on = models.DateTimeField(auto_now=True)

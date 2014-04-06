@@ -1,27 +1,17 @@
 {% extends "site_base.html" %}
 
-
-{% block body_class %}home{% endblock %}
-
-{% block nav %}
-    <ul class="nav navbar-nav">
-        <li><a href="/contracts/">Contracts</a></li>
-    </ul>
-{% endblock %}
-
 {% block body %}
 
-    <h2>About Account Project</h2>
-    <p>
-        <a href="/contracts">Contracts</a>
-    </p>
-    
+    <h2>Homepage</h2>
+
     {% if user.is_authenticated %}
         {% url "what_next" as what_next_url %}
         <p class="what_next">Wondering <a href="{{ what_next_url }}" class="btn btn-primary large">What Next</a>?</p>
     {% else %}
         {% url "account_login" as login_url %}
         {% url "account_signup" as signup_url %}
-        <p>{You can <a href="{{ login_url }}" class="btn btn-default">Log In</a> or <a href="{{ signup_url }}" class="btn btn-primary">Sign Up</a> to try out the site.</p>
+        <p>You can <a href="{{ login_url }}" class="btn btn-default">Log In</a> or <a href="{{ signup_url }}"
+                                                                                      class="btn btn-primary">Sign
+            Up</a> to try out the site.</p>
     {% endif %}
 {% endblock %}
