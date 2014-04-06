@@ -55,7 +55,7 @@ MEDIA_ROOT = os.path.join(PACKAGE_ROOT, "site_media", "uploads")
 # Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
 MEDIA_URL = "/site_media/uploads/"
 
-FILEBROWSER_MEDIA_ROOT = MEDIA_ROOT+'/'
+FILEBROWSER_MEDIA_ROOT = MEDIA_ROOT + '/'
 FILEBROWSER_MEDIA_URL = MEDIA_URL
 FILEBROWSER_DIRECTORY = ''
 
@@ -104,7 +104,6 @@ TEMPLATE_CONTEXT_PROCESSORS = [
     "django.core.context_processors.request",
 ]
 
-
 MIDDLEWARE_CLASSES = [
     "django.middleware.common.CommonMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
@@ -133,16 +132,16 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.sites",
     "django.contrib.staticfiles",
-    
+
     # theme
     "bootstrapform",
     "pinax_theme_bootstrap",
-    
+
     # external
     "account",
     "eventlog",
     "metron",
-    
+
     # project
     "mysite",
     "contracts",
@@ -191,7 +190,7 @@ ACCOUNT_OPEN_SIGNUP = True
 ACCOUNT_USE_OPENID = False
 ACCOUNT_REQUIRED_EMAIL = True
 ACCOUNT_EMAIL_UNIQUE = True
-ACCOUNT_EMAIL_CONFIRMATION_REQUIRED = False
+ACCOUNT_EMAIL_CONFIRMATION_REQUIRED = True
 ACCOUNT_LOGIN_REDIRECT_URL = "home"
 ACCOUNT_LOGOUT_REDIRECT_URL = "home"
 ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 2
