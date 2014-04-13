@@ -1,7 +1,7 @@
 from django.http import Http404
-from django.shortcuts import render_to_response
+from django.shortcuts import render_to_response, get_object_or_404
 
-from mysite.models import Article, BreakingNews
+from mysite.models import Article, BreakingNews, MostRead, Author
 
 
 def article_detail(request, year, month, day, page_slug):
@@ -65,7 +65,13 @@ def section_arts(request):
 
 def home(request):
     data = {}
+    data['most_read'] = MostRead.objects.get()
     try:
         data['breaking_news'] = BreakingNews.objects.filter(active=True).latest('when')
     finally:
         return render_to_response('homepage.html', data)
+
+
+def writer_detail(request, pk, first, middle, last):
+    writer = get_object_or_404(Author, pk=pk)
+    return render_to_response('writer/detail.html', {'writer': writer})

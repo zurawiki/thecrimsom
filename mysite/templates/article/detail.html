@@ -34,18 +34,6 @@
     <script type="text/javascript">var addthis_config = {"data_track_addressbar": false};</script>
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=thecrimson"></script>
 
-    <script type="text/javascript">
-        var disqus_shortname = 'thecrimson';
-        var disqus_url = 'http://www.thecrimson.com/article/2014/4/3/title-ix-complaint-college/';
-        (function () {
-            var dsq = document.createElement('script');
-            dsq.type = 'text/javascript';
-            dsq.src = 'http://thecrimson.disqus.com/embed.js';
-            dsq.async = true;
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0])
-                    .appendChild(dsq);
-        })();
-    </script>
 
     <script type="text/javascript">var NREUMQ = NREUMQ || [];
     NREUMQ.push(["mark", "firstbyte", new Date().getTime()]);</script>
@@ -119,8 +107,8 @@
                     </li>
                     <li><a href="/section/fm/" {% if article.section.name == 'Magazine' %}class="active"{% endif %}>Magazine</a>
                     </li>
-                    <li><a href="/section/sports/ {% if article.section.name == 'Sports' %}class="
-                           active"{% endif %}">Sports</a></li>
+                    <li><a href="/section/sports/" {% if article.section.name == 'Sports' %} class="
+                           active" {% endif %}>Sports</a></li>
                     <li><a href="/section/arts/"
                            {% if article.section.name == 'Arts' %}class="active"{% endif %}>Arts</a></li>
                     <li><a href="/section/media/" {% if article.section.name == 'Media' %}class="active"{% endif %}>Media</a>
@@ -153,7 +141,6 @@
 <section id="main">
 <div id="article">
 <div id="article-header">
-
     <h1>{{ article.title }}</h1>
 
     {% if article.subtitle %}
@@ -162,11 +149,8 @@
         </h2>
     {% endif %}
 
-    <div class="article-byline">By <a href='#'>{{ article.author }}</a>, CRIMSON STAFF WRITERS
-        <time
-                class="article-date"
-                datetime="{{ article.modified_on.date }}"
-                title="Updated {{ article.modified_on }}">
+    <div class="article-byline">By <a href='#'>{{ article.authors }}</a>, CRIMSON STAFF WRITERS
+        <time class="article-date" datetime="{{ article.modified_on.date }}" title="Updated {{ article.modified_on }}">
             {{ article.modified_on.date }}
         </time>
     </div>
@@ -186,114 +170,15 @@
 <div id="article-body">
     <div id="text">{{ article.content|safe }}
 
-        <!--
-                <p><b>UPDATED: April 3, 2014, at 9:40 p.m.</b></p>
-
-                <p><span>Two people, including at least one member of the student activist campaign Our Harvard Can Do Better, have filed a complaint against Harvard with the U.S. Department of Education’s Office for Civil Rights, alleging that the College’s sexual assault policies violate Title IX.</span>
-                </p>
-
-                <p><span>Emily M. Fox-Penner ’17, an organizer for Our Harvard Can Do Better, was a lead complainant, Fox-Penner confirmed Thursday. The second has remained anonymous. According to Fox-Penner, the complaint includes testimonials from 10 sexual assault victims.</span>
-                </p>
-
-                <p><span><div class="shortcodes-wrapper shortcodes-wrapper-left shortcodes-wrapper-large ">
-                    <div class="shortcodes-object">
-
-                        <a href="/image/2014/4/4/sexual-assault-policy-timeline/">
-                            <img src="http://thumbnails.thecrimson.com.s3.amazonaws.com/photos/2014/04/03/181344_1295528.jpg.800x212_q95_crop-smart_upscale.jpg"
-                                 title="Harvard&#39;s Sexual Assault Policy Through the Years"
-                                 alt="Harvard&#39;s Sexual Assault Policy Through the Years"/>
-                        </a>
-
-                        <div class="shortcodes-byline">
-                            <a href='/writer/1210160/Caroline_T._Zhang/'>Caroline T. Zhang</a>
-                        </div>
-
-
-                    </div>
-                </div>
-        </span></p>
-                <p><span>The complaint comes as Harvard is in the midst of evaluating its sexual assault policies. Mia Karvonides, the University’s Title IX officer, </span><a
-                        href="http://www.thecrimson.com/article/2013/5/28/university-titleix-sexual-assault/"><span>convened</span></a><span> a University-wide working group last spring to reconsider Harvard’s policies across schools and their compliance with Title IX regulations.</span><span> </span><span>According to Faculty of Arts and Sciences spokesperson Jeff Neal, work to implement a new University-wide Title IX policy is “nearing its completion.”</span>
-                </p>
-
-
-                <p><span>News of the complaint, which was filed last Friday, also comes just days after a </span><a
-                        href="http://www.thecrimson.com/article/2014/3/31/Harvard-sexual-assault/"><span>first-person, anonymous op-ed</span></a><span> published in The Crimson reignited campus debate about sexual assault and Harvard’s associated policies</span><span>. </span><span>The FAS policy—which covers the College—was adopted in 1993.</span>
-                </p>
-
-                <p><span>In a statement, members of the Our Harvard Can Do Better campaign wrote that they “acknowledge the recent steps Harvard has taken to reexamine Title IX compliance on campus” but that “</span><span>Harvard’s consistent shunning of student voice on the issue of sexual assault policy has led us to believe in the need for an externally-imposed mechanism for oversight of the policy review process to ensure its accountability to survivors.</span><span>”</span>
-                </p>
-
-                <p>
-
-                <div class="shortcodes-wrapper shortcodes-wrapper-left shortcodes-wrapper-large ">
-                    <div class="shortcodes-object">
-
-                        <blockquote>&quot;Harvard&#39;s consistent shunning of student voice on the issue of sexual assault
-                            policy has led us to believe in the need for an externally-imposed mechanism for oversight of the
-                            policy review process to ensure its accountability to survivors.&quot;</blockquote>
-
-                    </div>
-                </div>
-                </p><p><span>The statement alleges that sexual assault victims who the Our Harvard Can Do Better campaign worked with “have repeatedly been given false or inadequate information from administrators about pursuing accommodations” and were discouraged from pursuing disciplinary action.</span>
-            </p>
-
-                <p><span>According to Jessica R. Fournier ’17, an organizer for Our Harvard Can Do Better, the group’s complaint outlines grievances with the College’s informal accommodations process for victims; the Administrative Board’s disciplinary system; and the “hostile environment” she said Harvard has created for sexual assault victims.</span>
-                </p>
-
-                <p><span>Fournier said that the complaint calls for the College to standardize its process for informal accommodations—which include no contact orders, housing changes, and coursework extensions—and train all administrators to know what accommodations are available. Additionally, according to Fox-Penner and Fournier, the complaint recommends that the College adopt a policy of affirmative consent and that the Ad Board change its burden of proof standard to “the preponderance of the evidence,” which would require over 50 percent certainty to determine guilt, in sexual assault cases.</span>
-                </p>
-
-                <p><span>Current Ad Board policy stipulates that the body must be “sufficiently persuaded” that a student has broken Faculty rules to discipline the accused. Of schools in the Ivy League, only Harvard and Princeton have not adopted “the preponderance of the evidence” as its standard in sexual assault cases. The Office for Civil Rights recommended that standard in its April 2011 “Dear Colleague” letter.</span>
-                </p>
-
-                <p><span>The complaint also requests that the Ad Board be required to issue sexual assault victims pursuing disciplinary action before the body its verdict in writing, among other proposed changes, according to Fox-Penner.</span>
-                </p>
-
-                <p><span>A U.S. Department of Education spokesperson confirmed that the Office for Civil Rights has received a complaint apparently alleging that Harvard did not “respond appropriately” to sexual violence complaints. The complaint is currently under review.</span>
-                </p>
-
-                <p><span>Neal declined to comment on the complaint, writing in an email that Harvard officials have not seen it. Still, he wrote that </span><span>“Harvard, as a University and as a community, takes the issue of sexual harassment and sexual violence extremely seriously.”</span>
-                </p>
-
-                <div class="pagination ">
-                    <div class="pagination-spacer"></div>
-                    <div class="pagination-navigation"><a class="pagination-prev disabled"
-                                                          href="?page="
-                                                          rel="prev">&laquo; Previous Page</a><span
-                    class="pagination-pages"><span><a
-                    class="pagination-current"
-                    href="?page=1">1</a></span><span><a
-
-                    href="?page=2">2</a></span></span><a
-                    class="pagination-next "
-                    href="?page=2"
-                    rel="next">Next Page &raquo;</a></div>
-            <div class="pagination-spacer"><a class="pagination-single" href="?page=single">Single Page View</a></div>
-        </div>
-
--->
         <div id="article-tags">
-
             <h3>Tags</h3>
 
             <div>
-
                 <a href="/tag/college">College</a>
-
-
                 <a href="/tag/college-administration">College&nbsp;Administration</a>
-
-
                 <a href="/tag/college-life">College&nbsp;Life</a>
-
-
                 <a href="/tag/college-news">College&nbsp;News</a>
-
-
                 <a href="/tag/sexual-assault">Sexual&nbsp;Assault</a>
-
-
             </div>
 
         </div>
@@ -436,6 +321,23 @@
 
 <div id="article-comments">
     <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'theharvardcrimsom'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+        Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
     <div class="sidekick-shell sidebar">
         <div class="sidekick">
             <div class="ad-label">Advertisement</div>

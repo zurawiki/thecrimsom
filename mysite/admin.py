@@ -1,8 +1,10 @@
 from django.contrib import admin
 from django.core import exceptions
 from redactor.widgets import RedactorEditor
+from solo.admin import SingletonModelAdmin
 
 from models import *
+
 
 
 # Register your models here.
@@ -12,8 +14,8 @@ admin.site.register(Section)
 class ArticleAdmin(admin.ModelAdmin):
     actions = ['make_published', 'make_draft']
 
-    list_display = ('title', 'author', 'section', 'pub_status', 'created_on', 'modified_on')
-    list_filter = ('author', 'section')
+    list_display = ('title', 'section', 'pub_status', 'created_on', 'modified_on')
+    list_filter = ('authors', 'section')
 
     formfield_overrides = {
         models.TextField: {'widget': RedactorEditor},
@@ -45,4 +47,12 @@ class ArticleAdmin(admin.ModelAdmin):
     make_draft.short_description = 'Mark content as Draft'
 
 
+class AuthorAdmin(admin.ModelAdmin):
+    list_display = ('first_name', 'middle_name', 'last_name', 'created_on')
+    list_filter = ('first_name', 'last_name')
+
+
 admin.site.register(Article, ArticleAdmin)
+admin.site.register(Author, AuthorAdmin)
+admin.site.register(HomePage, SingletonModelAdmin)
+admin.site.register(MostRead, SingletonModelAdmin)

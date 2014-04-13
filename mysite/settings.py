@@ -100,7 +100,7 @@ TEMPLATE_CONTEXT_PROCESSORS = [
     "django.core.context_processors.tz",
     "django.contrib.messages.context_processors.messages",
     "account.context_processors.account",
-    "pinax_theme_bootstrap.context_processors.theme",
+    # "pinax_theme_bootstrap.context_processors.theme",
     "django.core.context_processors.request",
 ]
 
@@ -125,20 +125,21 @@ INSTALLED_APPS = [
     'grappelli.dashboard',
     'grappelli',
     'filebrowser',
+    'solo',
     'django.contrib.admin',
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.messages",
-    "django.contrib.sessions",
-    "django.contrib.sites",
+    # "django.contrib.sessions",
+    # "django.contrib.sites",
     "django.contrib.staticfiles",
 
     # theme
-    "bootstrapform",
-    "pinax_theme_bootstrap",
+    # "bootstrapform",
+    # "pinax_theme_bootstrap",
 
     # external
-    "account",
+    # "account",
     "eventlog",
     "metron",
 

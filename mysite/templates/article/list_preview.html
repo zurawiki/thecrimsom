@@ -1,0 +1,20 @@
+<div class="list-article article">
+    {% if article.main_rel_content or article|img_url:"60,60,60,60" %}
+        <div class="article-headline-image">
+            <a href="{{ article.get_absolute_url }}">
+                {{ article.main_rel_content|to_img_tag:"60,60,60,60" }}
+            </a>
+        </div>
+    {% endif %}
+    <div class="article-section">
+        <a href="/tag/college">College</a>
+    </div>
+    <a href="{{ article.url }}"><h2>{{ article.title }}</h2></a>
+
+    <div class="article-byline">By <a href='#'>{{ article.authors }}</a>, CRIMSON STAFF WRITERS
+        <time class="article-date" datetime="{{ article.modified_on.date }}" title="Updated {{ article.modified_on }}">
+            {{ article.modified_on.date }}
+        </time>
+    </div>
+    <p>{{ article.teaser|truncatewords_html:50 }}</p>
+</div>

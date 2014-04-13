@@ -1,0 +1,22 @@
+{% extends "site_base.html" %}
+
+{% block title %}{{ writer }} | Writer Profile | {{ block.super }}{% endblock %}
+
+{% block body %}
+    <section id="main" class="author">
+        <div id="body">
+            <h1>{{ writer }}</h1>
+            <ul class="list-actions">
+                <li class="list-subscribe" style="width: 100%;"><a href="{{ rss_url }}">Subscribe via RSS</a></li>
+            </ul>
+
+            {% include "helpers/pager.html" %}
+
+            {% for article in writer.content.all %}
+                {{ article.list_preview }}
+            {% endfor %}
+
+            {% include "helpers/pager.html" %}
+        </div>
+    </section>
+{% endblock body %}
