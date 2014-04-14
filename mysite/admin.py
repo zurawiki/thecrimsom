@@ -8,6 +8,7 @@ from models import *
 
 
 
+
 # Register your models here.
 admin.site.register(Section)
 
@@ -60,3 +61,4 @@ admin.site.register(Author, AuthorAdmin)
 admin.site.register(HomePage, SingletonModelAdmin)
 admin.site.register(MostRead, SingletonModelAdmin)
 admin.site.register(NewsSection, SingletonModelAdmin)
+admin.site.register(OpinionSection, SingletonModelAdmin)

@@ -1,7 +1,7 @@
 from django.http import Http404
 from django.shortcuts import render_to_response, get_object_or_404
 
-from mysite.models import Article, BreakingNews, MostRead, Author, HomePage, NewsSection, Section
+from mysite.models import Article, BreakingNews, MostRead, Author, HomePage, NewsSection, Section, OpinionSection
 
 
 def article_detail(request, year, month, day, page_slug):
@@ -29,6 +29,11 @@ def section_news(request):
 def section_opinion(request):
     data = {}
     # fill it
+    data['most_read'] = MostRead.objects.get()
+    data['layout'] = OpinionSection.objects.get()
+    opinion = Section.objects.filter(name="Opinion")[0]
+    data['col1'] = Article.objects.filter(section=opinion)[0:5]
+    data['col2'] = Article.objects.filter(section=opinion)[5:10]
     return render_to_response('section/opinion.html', data)
 
 

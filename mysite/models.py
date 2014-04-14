@@ -126,6 +126,25 @@ class NewsSection(SingletonModel):
         verbose_name_plural = u"News Section"
 
 
+class OpinionSection(SingletonModel):
+    comic = models.ImageField(upload_to='images')
+    ed1 = models.ForeignKey(Article, null=True, related_name='+')
+    ed2 = models.ForeignKey(Article, null=True, related_name='+')
+    ed3 = models.ForeignKey(Article, null=True, related_name='+')
+    ed4 = models.ForeignKey(Article, null=True, related_name='+')
+    oped1 = models.ForeignKey(Article, null=True, related_name='+')
+    oped2 = models.ForeignKey(Article, null=True, related_name='+')
+    oped3 = models.ForeignKey(Article, null=True, related_name='+')
+    oped4 = models.ForeignKey(Article, null=True, related_name='+')
+
+    def __unicode__(self):
+        return u"Opinion Section"  # something like this will make admin message strings more coherent
+
+    class Meta:
+        verbose_name = u"Opinion Section"  # once again this will make sure your admin UI doesn't have illogical text
+        verbose_name_plural = u"Opinion Section"
+
+
 class MostRead(SingletonModel):
     n1 = models.ForeignKey(Article, null=True, related_name='+')
     n2 = models.ForeignKey(Article, null=True, related_name='+')
