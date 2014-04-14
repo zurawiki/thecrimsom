@@ -130,8 +130,8 @@ INSTALLED_APPS = [
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.messages",
-    # "django.contrib.sessions",
-    # "django.contrib.sites",
+    "django.contrib.sessions",
+    "django.contrib.sites",
     "django.contrib.staticfiles",
 
     # theme
@@ -139,7 +139,7 @@ INSTALLED_APPS = [
     # "pinax_theme_bootstrap",
 
     # external
-    # "account",
+    "account",
     "eventlog",
     "metron",
 

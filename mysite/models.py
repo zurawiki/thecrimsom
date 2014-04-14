@@ -53,8 +53,12 @@ class Article(models.Model):
     def list_preview(self):
         return render_to_string('article/list_preview.html', {'article': self})
 
+    def __unicode__(self):
+        return self.title
+
+
     def __str__(self):
-        return "%s by %s" % (self.title, self.author)
+        return "".join([x if ord(x) < 128 else '?' for x in unicode(self)])
 
     def url(self):
         year = self.created_on.year
