@@ -1,21 +1,16 @@
-pinax-project-account
-=====================
-
-a starter project the incorporates account features from django-user-accounts
-
-
-Usage:
-
-    django-admin.py startproject --template=https://github.com/pinax/pinax-project-account/zipball/master <project_name>
 
 Getting Started:
 
     pip install virtualenv
-    virtualenv mysiteenv
+    virtualenv venv
     source mysiteenv/bin/activate
-    pip install Django==1.6.2
-    django-admin.py startproject --template=https://github.com/pinax/pinax-project-account/zipball/master mysite
-    cd mysite
     pip install -r requirements.txt
+    pip install scrapy
     python manage.py syncdb
+
+Scrape Crimson Site data
+    scrapy crawl crimson -o crimson-scrape.json -t json
+    python manage.py import_scrape crimson-scrape.json
+
+Run Server
     python manage.py runserver
