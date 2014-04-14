@@ -1,0 +1,67 @@
+[
+    {
+        "pk": 1,
+        "model": "sites.site",
+        "fields": {
+            "domain": "thecrimsom.com",
+            "name": "The Harvard Crimson"
+        }
+    },
+    {
+        "pk": 1,
+        "model": "mysite.section",
+        "fields": {
+            "name": "News"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "mysite.section",
+        "fields": {
+            "name": "Opinion"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "mysite.section",
+        "fields": {
+            "name": "Magazine"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "mysite.section",
+        "fields": {
+            "name": "Sports"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "mysite.section",
+        "fields": {
+            "name": "Arts"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "mysite.section",
+        "fields": {
+            "name": "Media"
+        }
+    },
+    {
+        "pk": 7,
+        "model": "mysite.section",
+        "fields": {
+            "name": "Flyby"
+        }
+    },
+    {
+        "pk": 8,
+        "model": "mysite.section",
+        "fields": {
+            "name": "Admissions"
+        }
+    }
+
+]
