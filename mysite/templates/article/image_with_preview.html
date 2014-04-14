@@ -1,0 +1,7 @@
+<div class="article-image">
+    <a href="{{ article.get_absolute_url }}">
+        <img src="{{ article.image.url }}"
+             title="{{ article.title }}" alt="{{ article.title }}"/>
+    </a>
+</div>
+{% include 'article/preview.html' %}

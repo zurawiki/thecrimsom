@@ -34,6 +34,8 @@ class Article(models.Model):
         (-1, 'Deleted'),
     )
 
+    fake = models.BooleanField(default=False)
+
     title = models.CharField(max_length=200, blank=False, null=False, default='')
     subtitle = models.CharField(max_length=255, blank=True, null=False, default='')
     authors = models.ManyToManyField(Author, null=True, related_name='content')
@@ -57,13 +59,18 @@ class Article(models.Model):
         return render_to_string('article/list_preview.html', {'article': self})
 
     def __unicode__(self):
-        return self.title
+        if self.fake:
+            return "(FAKE) %s" % self.title
+        else:
+            return self.title
 
 
     def __str__(self):
         return "".join([x if ord(x) < 128 else '?' for x in unicode(self)])
 
     def get_absolute_url(self):
+        if self.fake:
+            return '#'
         year = self.created_on.year
         month = self.created_on.month
         day = self.created_on.day
@@ -100,6 +107,23 @@ class HomePage(SingletonModel):
     class Meta:
         verbose_name = "Home Page"  # once again this will make sure your admin UI doesn't have illogical text
         verbose_name_plural = "Home Page"
+
+
+class NewsSection(SingletonModel):
+    featured = models.ForeignKey(Article, null=True, related_name='+')
+    image1 = models.ForeignKey(Article, null=True, related_name='+')
+    image2 = models.ForeignKey(Article, null=True, related_name='+')
+    image3 = models.ForeignKey(Article, null=True, related_name='+')
+    image4 = models.ForeignKey(Article, null=True, related_name='+')
+    image5 = models.ForeignKey(Article, null=True, related_name='+')
+
+
+    def __unicode__(self):
+        return u"News Section"  # something like this will make admin message strings more coherent
+
+    class Meta:
+        verbose_name = u"News Section"  # once again this will make sure your admin UI doesn't have illogical text
+        verbose_name_plural = u"News Section"
 
 
 class MostRead(SingletonModel):

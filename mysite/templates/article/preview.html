@@ -1,0 +1,22 @@
+<div class="article-content">
+    <h3><a href='{{ article.get_absolute_url }}'>{{ article.title }}</a></h3>
+
+    <div class="article-byline">By
+        {% for author in article.authors.all %}
+            <a href='{{ author.get_absolute_url }}'>{{ author }}</a>,
+        {% endfor %}
+        CRIMSON STAFF WRITERS
+        <time class="article-date" datetime="{{ article.modified_on.date }}" title="Updated {{ article.modified_on }}">
+            {{ article.modified_on.date }}
+        </time>
+    </div>
+
+    <p>{{ article.teaser|truncatewords_html:50 }}</p>
+
+    <div class="article-comments">
+        <a href="{{ article.get_absolute_url }}#article-comments">
+            See comments
+        </a>
+    </div>
+
+</div>

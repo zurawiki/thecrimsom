@@ -149,7 +149,7 @@ INSTALLED_APPS = [
 
     # custom
     # "django.contrib.localflavor",
-    'south',
+    # 'south',
     'redactor',
 ]
 

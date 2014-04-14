@@ -1,0 +1,13 @@
+{% if breaking_news %}
+    <div id="breaking-news" style="display: block;">
+        <h3>Breaking News</h3>
+
+        <div id="breaking-news-first">
+            <a href="{{ breaking_news.link }}">{{ breaking_news.description }}</a>
+            Updated {{ breaking_news.when }}
+        </div>
+        <div id="breaking-news-second">
+            <a id="breaking-news-dismiss" data-timestamp="171959000000" href="#" title="Dismiss">×</a>
+        </div>
+    </div>
+{% endif %}

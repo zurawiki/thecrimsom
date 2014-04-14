@@ -8,11 +8,22 @@ from django.core.management.base import BaseCommand
 from mysite.models import Article, Author, Section
 
 
+def create_sections():
+    SECTIONS = [
+        "News", "Opinion", "Magazine", "Sports",
+        "Arts", "Media", "Flyby", "Admissions"
+    ]
+    for s in SECTIONS:
+        Section.objects.get_or_create(name=s)[0].save()
+
+
 class Command(BaseCommand):
     args = '<scrapy-output.json>'
     help = 'Imports a scrapy json file of Harvard Crimson articles'
 
     def handle(self, *args, **options):
+        create_sections()
+
         for file in args:
             # load json
             json_data = open(file)

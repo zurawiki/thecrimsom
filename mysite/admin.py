@@ -7,6 +7,7 @@ from models import *
 
 
 
+
 # Register your models here.
 admin.site.register(Section)
 
@@ -16,6 +17,7 @@ class ArticleAdmin(admin.ModelAdmin):
 
     list_display = ('title', 'section', 'pub_status', 'created_on', 'modified_on')
     list_filter = ('authors', 'section')
+    search_fields = ('title', 'subtitle')
 
     formfield_overrides = {
         models.TextField: {'widget': RedactorEditor},
@@ -50,9 +52,11 @@ class ArticleAdmin(admin.ModelAdmin):
 class AuthorAdmin(admin.ModelAdmin):
     list_display = ('first_name', 'middle_name', 'last_name', 'created_on')
     list_filter = ('first_name', 'last_name')
+    search_fields = ('first_name', 'middle_name', 'last_name')
 
 
 admin.site.register(Article, ArticleAdmin)
 admin.site.register(Author, AuthorAdmin)
 admin.site.register(HomePage, SingletonModelAdmin)
 admin.site.register(MostRead, SingletonModelAdmin)
+admin.site.register(NewsSection, SingletonModelAdmin)

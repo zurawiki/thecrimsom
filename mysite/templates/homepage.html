@@ -1,325 +1,119 @@
 {% extends 'site_base.html' %}
 
 {% block body %}
-    {% if breaking_news %}
-        <div id="breaking-news" style="display: block;">
-            <h3>Breaking News</h3>
-
-            <div id="breaking-news-first">
-                <a href="{{ breaking_news.link }}">{{ breaking_news.description }}</a>
-                Updated {{ breaking_news.when }}
-            </div>
-            <div id="breaking-news-second">
-                <a id="breaking-news-dismiss" data-timestamp="171959000000" href="#" title="Dismiss">×</a>
-            </div>
-        </div>
-    {% endif %}
+    {% include 'helpers/breaking_news.html' %}
 
     <section id="primary">
-    <div id="primary-first">
-
-
-        <div class="article feature vertical">
-
-            <div class="article-image">
-                <a href="/article/2014/4/5/divinity-school-campaign-launch/">
-                    <img src="http://thumbnails.thecrimson.com.s3.amazonaws.com/photos/2014/01/28/195249_1293108.jpg.550x356_q95_crop-smart_upscale.jpg"
-                         title="Harvard Divinity School" alt="Harvard Divinity School"/>
-                </a>
+        <div id="primary-first">
+            <div class="article feature vertical">
+                {% include 'article/image_with_preview.html' with article=layout.primary1 %}
             </div>
 
+            <div class="article">
+                {% include 'article/preview.html' with article=layout.primary2 %}
+            </div>
 
-            <div class="article-content">
-
-                <h2><a href='/article/2014/4/5/divinity-school-campaign-launch/'>Divinity School Launches Capital
-                    Campaign,
-                    Aims to Raise $50 Million</a></h2>
-
-
-                <div class="article-byline">
-                    By <a href='/writer/1210552/Theodore_R._Delwiche/'>Theodore R. Delwiche</a>
-                    <time
-                            class="article-date"
-                            datetime="2014-04-05"
-                            title="Updated April 6, 2014 at 12:35p.m.">
-                        April 5, 2014
-                    </time>
-                </div>
-                <p>The Divinity School’s $50 million target, which is Harvard’s second smallest school, represents less
-                    than
-                    1 percent of the University’s $6.5 billion fundraising goal.</p>
-
-
-                <div class="article-comments">
-                    <a href="/article/2014/4/5/divinity-school-campaign-launch/#article-comments">
-                        <span class="comment-count">1</span>
-                        comment
-                    </a>
-                </div>
-
-
+            <div class="article">
+                {% include 'article/preview.html' with article=layout.primary3 %}
             </div>
         </div>
+        <div id="primary-second">
+            <div class="article bigger">
+                {% include 'article/preview.html' with article=layout.primary4 %}
+            </div>
 
+            <div class="article">
+                {% include 'article/preview.html' with article=layout.primary5 %}
+            </div>
 
-        <div class="article">
-
-
-            <div class="article-content">
-
-                <h3><a href='/article/2014/4/4/harvard-innovation-challenge-i3/'>I3 Innovation Challenge Awards Four
-                    $10,000
-                    Prizes</a></h3>
-
-
-                <div class="article-byline">
-                    By <a href='/writer/1209929/Francesca__Annicchiarico/'>Francesca Annicchiarico</a>
-                    <time
-                            class="article-date"
-                            datetime="2014-04-04"
-                            title="Updated April 4, 2014 at 1:14a.m.">
-                        April 4, 2014
-                    </time>
-                </div>
-                <p>Three student projects won $10,000 grants in the seventh iteration of the I3 Harvard College
-                    Innovation
-                    Challenge.</p>
-
-
-                <div class="article-comments">
-                    <a href="/article/2014/4/4/harvard-innovation-challenge-i3/#article-comments">
-                        <span class="comment-count">1</span>
-                        comment
-                    </a>
-                </div>
-
-
+            <div class="article">
+                {% include 'article/preview.html' with article=layout.primary6 %}
             </div>
         </div>
+        <div id="primary-third">
 
 
-        <div class="article">
+            <div class="blog-shell">
+                <div class="blog-box">
 
-
-            <div class="article-content">
-
-                <h3><a href='/article/2014/4/4/harvard-red-sox-fenway-organist-librarian/'>From the Harvard Library to
-                    Fenway, Red Sox Organist Says He&#39;s Ready for Opener</a></h3>
-
-
-                <div class="article-byline">
-                    By <a href='/writer/1210657/Kristina%20_D._Lorch/'>Kristina D. Lorch</a>
-                    <time
-                            class="article-date"
-                            datetime="2014-04-04"
-                            title="Updated April 5, 2014 at 2:56p.m.">
-                        April 4, 2014
-                    </time>
-                </div>
-                <p>When Joshua Kantor is not playing the Organ at famed Fenway Park, he works as a Harvard
-                    librarian.</p>
-
-
-                <div class="article-comments">
-                    <a href="/article/2014/4/4/harvard-red-sox-fenway-organist-librarian/#article-comments">
-                        <span class="comment-count">6</span>
-                        comments
-                    </a>
-                </div>
-
-
-            </div>
-        </div>
-    </div>
-    <div id="primary-second">
-
-
-        <div class="article bigger">
-
-
-            <div class="article-content">
-
-                <h2><a href='/article/2014/4/3/title-ix-complaint-college/'>Undergraduates Challenge College’s Sexual
-                    Assault Policy Under Title IX</a></h2>
-
-
-                <div class="article-byline">
-                    By <a href='/writer/1209925/Madeline_R._Conway/'>Madeline R. Conway</a> and <a
-                        href='/writer/1210000/Steven_S.%20_Lee/'>Steven S. Lee</a>
-                    <time
-                            class="article-date"
-                            datetime="2014-04-03"
-                            title="Updated April 4, 2014 at 3:21a.m.">
-                        April 3, 2014
-                    </time>
-                </div>
-                <p>Two people, including at least one member of the student activist campaign Our Harvard Can Do Better,
-                    have filed a complaint against Harvard with the U.S. Department of Education’s Office for Civil
-                    Rights,
-                    alleging that the College’s sexual assault policies violate Title IX.</p>
-
-
-                <div class="article-comments">
-                    <a href="/article/2014/4/3/title-ix-complaint-college/#article-comments">
-                        <span class="comment-count">9</span>
-                        comments
-                    </a>
-                </div>
-
-
-            </div>
-        </div>
-
-
-        <div class="article">
-
-
-            <div class="article-content">
-
-                <h3><a href='/article/2014/4/3/faust-sexual-misconduct-task-force/'>Amid Debate, Faust Announces
-                    Creation of
-                    Sexual Assault Task Force</a></h3>
-
-
-                <div class="article-byline">
-                    By <a href='/writer/1209926/Christine_Y.%20_Cahill/'>Christine Y. Cahill</a> and <a
-                        href='/writer/1210685/Noah_J._Delwiche/'>Noah J. Delwiche</a>
-                    <time
-                            class="article-date"
-                            datetime="2014-04-03"
-                            title="Updated April 4, 2014 at 1:16a.m.">
-                        April 3, 2014
-                    </time>
-                </div>
-                <p>The task force will be chaired by former University Provost Steven E. Hyman, who, during his tenure
-                    as
-                    provost, helped oversee the creation of the Office of Sexual Assault Prevention and Response.</p>
-
-
-                <div class="article-comments">
-                    <a href="/article/2014/4/3/faust-sexual-misconduct-task-force/#article-comments">
-                        <span class="comment-count">22</span>
-                        comments
-                    </a>
-                </div>
-
-
-            </div>
-        </div>
-
-
-        <div class="article">
-
-
-            <div class="article-content">
-
-                <h3><a href='/article/2014/4/4/mass-turnpike-allston-meeting/'>With Turnpike Project Meeting
-                    Approaching,
-                    Allstonians Hope for Positive Changes </a></h3>
-
-
-                <div class="article-byline">
-                    By <a href='/writer/1210628/Karl_M._Aspelund/'>Karl M. Aspelund</a> and <a
-                        href='/writer/1209923/Marco_J._Barber%20Grossi/'>Marco J. Barber Grossi</a>
-                    <time
-                            class="article-date"
-                            datetime="2014-04-04"
-                            title="Updated April 4, 2014 at 10:27a.m.">
-                        April 4, 2014
-                    </time>
-                </div>
-                <p>With the first community meeting regarding the Massachusetts Turnpike realignment scheduled for next
-                    Thursday, Allston residents said they hope the $260 million construction project will produce
-                    positive
-                    changes in the community. </p>
-
-
-            </div>
-        </div>
-    </div>
-    <div id="primary-third">
-
-
-        <div class="blog-shell">
-            <div class="blog-box">
-
-                <div class="blog-feature">
-                    <div class="article-image">
-                        <a href="/article/2014/4/6/drinks-that-will-knock/">
-                            <img src="http://thumbnails.thecrimson.com.s3.amazonaws.com/photos/2014/04/04/125145_1295578.jpg.305x207_q95_crop-smart_upscale.jpg"
-                                 title="Janelle Monáe Flyby" alt="Janelle Monáe Flyby"/>
-                        </a>
-                    </div>
-                    <h2 class="blog-title" id="flyby-title">
-                        <a href="/section/flyby">
-                            <span class="flyby-flyby">Flyby</span> Blog
-                        </a>
-                    </h2>
-
-                    <div class="blog-entry">
-                        <h3><a href="/article/2014/4/6/drinks-that-will-knock/">Drinks That Will Knock You Off That
-                            Tightrope: How to Pregame Janelle Monáe</a></h3>
-
-                        <div class="article-byline">
-                            <span class="article-date">25 minutes ago</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="blog-more">
-
-                    <div class="blog-another">
-                        <div class="article-thumbnail">
-                            <a href="#">
-                                <img src="http://thumbnails.thecrimson.com.s3.amazonaws.com/photos/2010/11/28/225909_1243028.jpg.40x40_q95_crop-smart_upscale.jpg"
-                                     title="Students in Lamont" alt="Students in Lamont"/>
+                    <div class="blog-feature">
+                        <div class="article-image">
+                            <a href="/article/2014/4/6/drinks-that-will-knock/">
+                                <img src="http://thumbnails.thecrimson.com.s3.amazonaws.com/photos/2014/04/04/125145_1295578.jpg.305x207_q95_crop-smart_upscale.jpg"
+                                     title="Janelle Monáe Flyby" alt="Janelle Monáe Flyby"/>
                             </a>
                         </div>
-                        <div class="blog-entry">
-                            <h4><a href="/article/2014/4/5/thirsty-thursday-in-lamont/">Thirsty Thursday in Lamont</a>
-                            </h4>
-
-                            <div class="article-byline"><span class="article-date">Yesterday</span></div>
-                        </div>
-                    </div>
-
-                    <div class="blog-another">
-                        <div class="article-thumbnail">
-                            <a href="#">
-                                <img src="http://thumbnails.thecrimson.com.s3.amazonaws.com/photos/2014/04/04/150508_1295581.jpg.40x40_q95_crop-smart_upscale.jpg"
-                                     title="Taylor Swift" alt="Taylor Swift"/>
+                        <h2 class="blog-title" id="flyby-title">
+                            <a href="/section/flyby">
+                                <span class="flyby-flyby">Flyby</span> Blog
                             </a>
-                        </div>
-                        <div class="blog-entry">
-                            <h4><a href="/article/2014/4/4/move-over-miley/">Move Over, Miley: Celebs Harvard Really
-                                Wants
-                                to See</a></h4>
+                        </h2>
 
-                            <div class="article-byline"><span class="article-date">2 days ago</span></div>
+                        <div class="blog-entry">
+                            <h3><a href="/article/2014/4/6/drinks-that-will-knock/">Drinks That Will Knock You Off That
+                                Tightrope: How to Pregame Janelle Monáe</a></h3>
+
+                            <div class="article-byline">
+                                <span class="article-date">25 minutes ago</span>
+                            </div>
                         </div>
                     </div>
 
+                    <div class="blog-more">
+
+                        <div class="blog-another">
+                            <div class="article-thumbnail">
+                                <a href="#">
+                                    <img src="http://thumbnails.thecrimson.com.s3.amazonaws.com/photos/2010/11/28/225909_1243028.jpg.40x40_q95_crop-smart_upscale.jpg"
+                                         title="Students in Lamont" alt="Students in Lamont"/>
+                                </a>
+                            </div>
+                            <div class="blog-entry">
+                                <h4><a href="/article/2014/4/5/thirsty-thursday-in-lamont/">Thirsty Thursday in
+                                    Lamont</a>
+                                </h4>
+
+                                <div class="article-byline"><span class="article-date">Yesterday</span></div>
+                            </div>
+                        </div>
+
+                        <div class="blog-another">
+                            <div class="article-thumbnail">
+                                <a href="#">
+                                    <img src="http://thumbnails.thecrimson.com.s3.amazonaws.com/photos/2014/04/04/150508_1295581.jpg.40x40_q95_crop-smart_upscale.jpg"
+                                         title="Taylor Swift" alt="Taylor Swift"/>
+                                </a>
+                            </div>
+                            <div class="blog-entry">
+                                <h4><a href="/article/2014/4/4/move-over-miley/">Move Over, Miley: Celebs Harvard Really
+                                    Wants
+                                    to See</a></h4>
+
+                                <div class="article-byline"><span class="article-date">2 days ago</span></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            {% include 'helpers/most_read.html' %}
+
+            <div class="sidekick-shell">
+                <div class="sidekick">
+                    <div id="ad-TheCrimson_Homepage_ATF_300x250" style="width: 300px; height: 250px;">
+                        <script type='text/javascript'>
+                            if (Crimson.Responsive.isMobile === (0 === 1)
+                                    || (0 === 0)) {
+                                googletag.cmd.push(function () {
+                                    googletag.display('ad-TheCrimson_Homepage_ATF_300x250');
+                                });
+                            }
+                        </script>
+                    </div>
                 </div>
             </div>
         </div>
-
-        {% include 'helpers/most_read.html' %}
-
-        <div class="sidekick-shell">
-            <div class="sidekick">
-                <div id="ad-TheCrimson_Homepage_ATF_300x250" style="width: 300px; height: 250px;">
-                    <script type='text/javascript'>
-                        if (Crimson.Responsive.isMobile === (0 === 1)
-                                || (0 === 0)) {
-                            googletag.cmd.push(function () {
-                                googletag.display('ad-TheCrimson_Homepage_ATF_300x250');
-                            });
-                        }
-                    </script>
-                </div>
-            </div>
-        </div>
-    </div>
     </section>
     <section id="row">
 

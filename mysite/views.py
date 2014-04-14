@@ -1,13 +1,13 @@
 from django.http import Http404
 from django.shortcuts import render_to_response, get_object_or_404
 
-from mysite.models import Article, BreakingNews, MostRead, Author
+from mysite.models import Article, BreakingNews, MostRead, Author, HomePage, NewsSection, Section
 
 
 def article_detail(request, year, month, day, page_slug):
     try:
         a = Article.objects.get(slug=page_slug, )
-        if a.pub_status == 1:
+        if a.pub_status == 1 or request.user.is_staff:
             return render_to_response('article/detail.html', {'article': a})
         else:
             raise Http404
@@ -17,6 +17,11 @@ def article_detail(request, year, month, day, page_slug):
 
 def section_news(request):
     data = {}
+    data['most_read'] = MostRead.objects.get()
+    data['layout'] = NewsSection.objects.get()
+    news = Section.objects.filter(name="News")[0]
+    data['col1'] = Article.objects.filter(section=news)[0:4]
+    data['col2'] = Article.objects.filter(section=news)[4:8]
     # fill it
     return render_to_response('section/news.html', data)
 
@@ -66,6 +71,7 @@ def section_arts(request):
 def home(request):
     data = {}
     data['most_read'] = MostRead.objects.get()
+    data['layout'] = HomePage.objects.get()
     try:
         data['breaking_news'] = BreakingNews.objects.filter(active=True).latest('when')
     finally:
