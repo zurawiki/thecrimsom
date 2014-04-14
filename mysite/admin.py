@@ -1,4 +1,5 @@
 from django.contrib import admin
+
 from django.core import exceptions
 from redactor.widgets import RedactorEditor
 from solo.admin import SingletonModelAdmin
@@ -56,9 +57,21 @@ class AuthorAdmin(admin.ModelAdmin):
     search_fields = ('first_name', 'middle_name', 'last_name')
 
 
+class HomeAdmin(SingletonModelAdmin):
+    change_form_template = "admin/solo/homepage.html"
+
+
+class NewsAdmin(SingletonModelAdmin):
+    change_form_template = "admin/solo/news.html"
+
+
+class OpinionAdmin(SingletonModelAdmin):
+    change_form_template = "admin/solo/opinion.html"
+
+
 admin.site.register(Article, ArticleAdmin)
 admin.site.register(Author, AuthorAdmin)
-admin.site.register(HomePage, SingletonModelAdmin)
 admin.site.register(MostRead, SingletonModelAdmin)
-admin.site.register(NewsSection, SingletonModelAdmin)
-admin.site.register(OpinionSection, SingletonModelAdmin)
+admin.site.register(HomePage, HomeAdmin)
+admin.site.register(NewsSection, NewsAdmin)
+admin.site.register(OpinionSection, OpinionAdmin)

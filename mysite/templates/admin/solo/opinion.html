@@ -1,0 +1,6 @@
+{% extends "admin/change_form.html" %}
+{% load staticfiles %}
+{% block after_field_sets %}
+    <h2>See the layout of this page below:</h2>
+    <img src="{% static 'layout/opinion.png' %}"/>
+{% endblock %}

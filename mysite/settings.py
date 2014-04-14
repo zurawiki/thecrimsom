@@ -205,7 +205,7 @@ AUTH_PROFILE_MODULE = 'mysite.UserProfile'
 
 # Grappelli
 
-# GRAPPELLI_ADMIN_TITLE = 'The Harvard Lampoon'
+GRAPPELLI_ADMIN_TITLE = 'The Harvard Crimsom'
 GRAPPELLI_INDEX_DASHBOARD = 'mysite.dashboard.MainDashboard'
 
 # Redactor
