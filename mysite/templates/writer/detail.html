@@ -10,13 +10,10 @@
                 <li class="list-subscribe" style="width: 100%;"><a href="{{ rss_url }}">Subscribe via RSS</a></li>
             </ul>
 
-            {% include "helpers/pager.html" %}
-
             {% for article in writer.content.all %}
                 {{ article.list_preview }}
             {% endfor %}
 
-            {% include "helpers/pager.html" %}
         </div>
     </section>
 {% endblock body %}

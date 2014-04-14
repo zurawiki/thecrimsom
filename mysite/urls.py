@@ -18,7 +18,7 @@ urlpatterns = patterns("",
                        url(r'^section/flyby/$', views.section_flyby),
                        url(r'^admissions/$', views.section_admissions),
                        url(r'^article/(?P<year>\d+)/(?P<month>\d+)/(?P<day>\d+)/(?P<page_slug>[\w-]+)/$',
-                           views.article_detail),
+                           views.article_detail, name='article_detail'),
                        url(
                            r'writer/(?P<pk>\d+)/(?P<first>[\w\-\'\.\s]+)_(?P<middle>[\w\-\'\.\s]*)_(?P<last>[\w\-\'\.\s]+)/$',
                            views.writer_detail, name='content_writer_profile'),

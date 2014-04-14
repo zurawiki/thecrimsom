@@ -149,7 +149,11 @@
         </h2>
     {% endif %}
 
-    <div class="article-byline">By <a href='#'>{{ article.authors }}</a>, CRIMSON STAFF WRITERS
+    <div class="article-byline">By
+        {% for author in article.authors.all %}
+            <a href='{{ author.get_absolute_url }}'>{{ author }}</a>,
+        {% endfor %}
+        CRIMSON STAFF WRITERS
         <time class="article-date" datetime="{{ article.modified_on.date }}" title="Updated {{ article.modified_on }}">
             {{ article.modified_on.date }}
         </time>

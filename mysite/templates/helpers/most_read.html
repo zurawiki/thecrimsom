@@ -2,11 +2,11 @@
     <div id="most-read-box">
         <h3>Most Read</h3>
         <ol>
-            <li><a href='{{ most_read.n1.url }}'>{{ most_read.n1.title }}</a></li>
-            <li><a href='{{ most_read.n2.url }}'>{{ most_read.n2.title }}</a></li>
-            <li><a href='{{ most_read.n3.url }}'>{{ most_read.n3.title }}</a></li>
-            <li><a href='{{ most_read.n4.url }}'>{{ most_read.n4.title }}</a></li>
-            <li><a href='{{ most_read.n5.url }}'>{{ most_read.n5.title }}</a></li>
+            <li><a href='{{ most_read.n1.get_absolute_url }}'>{{ most_read.n1.title }}</a></li>
+            <li><a href='{{ most_read.n2.get_absolute_url }}'>{{ most_read.n2.title }}</a></li>
+            <li><a href='{{ most_read.n3.get_absolute_url }}'>{{ most_read.n3.title }}</a></li>
+            <li><a href='{{ most_read.n4.get_absolute_url }}'>{{ most_read.n4.title }}</a></li>
+            <li><a href='{{ most_read.n5.get_absolute_url }}'>{{ most_read.n5.title }}</a></li>
         </ol>
     </div>
 </div>

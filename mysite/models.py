@@ -1,8 +1,8 @@
+from django.core.urlresolvers import reverse
 from django.db import models
 from django.template.loader import render_to_string
 from django.utils.html import strip_tags
 from solo.models import SingletonModel
-
 
 class Section(models.Model):
     name = models.CharField(blank=False, max_length=50, db_index=True)
@@ -16,6 +16,9 @@ class Author(models.Model):
     last_name = models.CharField(blank=False, null=True, max_length=100)
     middle_name = models.CharField(blank=True, null=True, max_length=70)
     created_on = models.DateField(auto_now_add=True)
+
+    def get_absolute_url(self):
+        return reverse('mysite.views.writer_detail', args=[self.pk, self.first_name, self.middle_name, self.last_name])
 
     def __unicode__(self):
         if self.middle_name:
@@ -60,17 +63,19 @@ class Article(models.Model):
     def __str__(self):
         return "".join([x if ord(x) < 128 else '?' for x in unicode(self)])
 
-    def url(self):
+    def get_absolute_url(self):
         year = self.created_on.year
         month = self.created_on.month
         day = self.created_on.day
-        return "/article/%i/%i/%i/%s/" % (year, month, day, self.slug)
+
+        return reverse('mysite.views.article_detail', args=[year, month, day, self.slug])
+
 
     def teaser(self):
         if self.subtitle:
             return self.subtitle
         else:
-            return strip_tags(self.text)
+            return strip_tags(self.content)
 
 
 class BreakingNews(SingletonModel):
