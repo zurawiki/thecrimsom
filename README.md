@@ -52,6 +52,7 @@ A screen scraper for the crimson web site is also included. Instructions are pro
 Getting Started:
 
 1. Install the Python environment (uses python 2.7)
+
     pip install virtualenv
     virtualenv venv
     source venv/bin/activate
@@ -59,10 +60,12 @@ Getting Started:
     pip install scrapy
 
 2. Setup the database and static files, scrape data form thecirmsom.com.
+
     python manage.py syncdb
     python manage.py collectstatic
     srapy crawl crimson -o crimson-scrape.json -t json
     python manage.py import_scrape crimson-scrape.json
 
 3. Run Server
+
     python manage.py runserver
